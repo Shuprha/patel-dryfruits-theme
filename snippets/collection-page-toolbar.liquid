@@ -1,0 +1,146 @@
+{%- assign st = section.settings -%}
+
+{%- liquid
+  assign sort_by = results.sort_by | default: results.default_sort_by
+  for option in results.sort_options
+    if option.value == sort_by
+      assign sort_by_name = option.name | escape
+      break
+    endif
+  endfor
+-%}
+<div class="m-collection-toolbar">
+  <div class="m-collection-toolbar--wrapper">
+    <div class="m-toolbar--left m:flex{% unless st.sidebar == 'fixed' %} xl:m:hidden{% endunless %}">
+      {%- if st.show_filter -%}
+        <button class="m-sidebar--open m:flex m:items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18.5401 3.24999H5.46013C5.03698 3.24931 4.62252 3.37013 4.26602 3.59809C3.90952 3.82605 3.62595 4.15157 3.44903 4.53596C3.2721 4.92036 3.20925 5.34746 3.26795 5.76653C3.32664 6.18559 3.50441 6.579 3.78013 6.89999L8.95013 12.93C9.14013 13.16 9.25013 13.45 9.25013 13.74V19.38C9.25013 19.99 9.56013 20.55 10.0801 20.87C10.3601 21.04 10.6801 21.13 11.0001 21.13C11.2701 21.13 11.5301 21.07 11.7801 20.94L13.7801 19.94C14.3801 19.64 14.7501 19.04 14.7501 18.37V13.73C14.7501 13.43 14.8601 13.14 15.0501 12.92L20.2201 6.88999C20.4959 6.569 20.6736 6.17559 20.7323 5.75653C20.791 5.33746 20.7282 4.91036 20.5512 4.52597C20.3743 4.14157 20.0907 3.81605 19.7342 3.58809C19.3777 3.36013 18.9633 3.23931 18.5401 3.23999V3.24999ZM19.0801 5.91999L13.9101 11.95C13.4801 12.45 13.2501 13.08 13.2501 13.74V18.38C13.2501 18.48 13.2001 18.56 13.1101 18.6L11.1101 19.6C11.0001 19.66 10.9101 19.62 10.8701 19.59C10.8301 19.56 10.7501 19.5 10.7501 19.38V13.74C10.7501 13.08 10.5201 12.45 10.0901 11.95L4.92013 5.91999C4.8104 5.79185 4.7501 5.6287 4.75013 5.45999C4.75013 5.06999 5.07013 4.74999 5.46013 4.74999H18.5401C18.9301 4.74999 19.2501 5.06999 19.2501 5.45999C19.2501 5.62999 19.1901 5.78999 19.0801 5.91999Z" fill="#1F1B20"/>
+          </svg>
+          <span class="m-toolbar--trigger--text">{{ 'collections.toolbar.show_filter' | t }}</span>
+          {% comment %}
+            <svg class="m-svg-icon--small" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"/>
+            </svg>
+          {% endcomment %}
+          <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+            <path d="M1.375 1.37494L4.5 4.49994L7.625 1.37494" stroke="#1F1B20" stroke-width="1.94444" stroke-linecap="square" stroke-linejoin="bevel"/>
+          </svg>
+        </button>
+      {%- endif -%}
+      {% if st.show_sorting %}
+        <button class="m-sortby--open m-sortby--open-featured md:m:hidden m:flex m:items-center">
+          <span class="m-toolbar--trigger--text" data-sortby-option>{{ sort_by_name }}</span>
+          <svg class="m-svg-icon--small" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"/>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+    {%- if st.show_sorting or st.show_columns_switcher -%}
+      <div class="m-toolbar--right m:flex m:flex-1 m:items-center m:justify-end md:m:justify-between">
+        {% if st.show_sorting %}
+          <div class="m-toolbar--sortby m:hidden md:m:block" data-toolbar-sorting>
+            <m-select-component>
+              {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+              <select name="sort_by" aria-describedby="a11y-refresh-page-message" class="js-selectNative">
+                {%- for option in results.sort_options -%}
+                  <option
+                    value="{{ option.value | escape }}"
+                    {% if option.value == sort_by %}
+                      selected="selected"
+                    {% endif %}
+                    data-index="{{ forloop.index0 }}"
+                  >
+                    {{ option.name | escape }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              <div class="m-select-custom js-selectCustom" aria-hidden="true">
+                <div class="m-select-custom--trigger">
+                  <span class="m-select-custom--trigger-text"></span>
+                  <span class="m-select-custom--trigger-icon">
+                    {% comment %}
+                      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"/>
+                      </svg>
+                    {% endcomment %}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="6" viewBox="0 0 9 6" fill="none">
+                      <path d="M1.375 1.37494L4.5 4.49994L7.625 1.37494" stroke="#1F1B20" stroke-width="1.94444" stroke-linecap="square" stroke-linejoin="bevel"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="m-select-custom--options m-select-custom--options-{{ pos }}">
+                  {%- for option in results.sort_options -%}
+                    <div class="m-select-custom--option" data-value="{{ option.value | escape }}">
+                      {{ option.name | escape }}
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </div>
+            </m-select-component>
+          </div>
+        {% endif %}
+        {% if st.show_columns_switcher %}
+          <div class="m-toolbar--column-switcher m:flex">
+            <button class="m:flex m-tooltip m-tooltip--top" data-column="1" aria-label="1-column">
+              <svg
+                class="m-svg-icon--small"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 12.5 9.5"
+              >
+                <path id="Rectangle" d="M12.5.75a.76.76 0 01-.75.75h-11A.76.76 0 010 .75.76.76 0 01.75 0h11a.76.76 0 01.75.75z" class="cls-1"/><path id="Rectangle-2" d="M12.5 4.75a.76.76 0 01-.75.75h-11A.76.76 0 010 4.75.76.76 0 01.75 4h11a.76.76 0 01.75.75z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-3" d="M12.5 8.75a.76.76 0 01-.75.75h-11A.76.76 0 010 8.75.76.76 0 01.75 8h11a.76.76 0 01.75.75z" class="cls-1" data-name="Rectangle"/>
+              </svg>
+              <span class="m-tooltip__content">{{ 'collections.toolbar.view_list' | t }}</span>
+            </button>
+            <button class="m:flex m-tooltip m-tooltip--top" data-column="2" aria-label="2-column">
+              <svg
+                class="m-svg-icon--small"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 5.5 12.5"
+              >
+                <path id="Rectangle" d="M.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 01.75 0z" class="cls-1"/><path id="Rectangle-2" d="M4.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 014.75 0z" class="cls-1" data-name="Rectangle"/></g></g></g></g>
+              </svg>
+              <span class="m-tooltip__content">{{ 'collections.toolbar.grid_2cloumns' | t }}</span>
+            </button>
+            <button class="m:hidden md:m:flex m-tooltip m-tooltip--top" data-column="3" aria-label="3-column">
+              <svg
+                class="m-svg-icon--small"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 9.5 12.5"
+              >
+                <path id="Rectangle" d="M.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 01.75 0z" class="cls-1"/><path id="Rectangle-2" d="M4.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 014.75 0z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-3" d="M8.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 018.75 0z" class="cls-1" data-name="Rectangle"/>
+              </svg>
+              <span class="m-tooltip__content">{{ 'collections.toolbar.grid_3cloumns' | t }}</span>
+            </button>
+            <button class="m:hidden md:m:flex m-tooltip m-tooltip--top" data-column="4" aria-label="4-column">
+              <svg
+                class="m-svg-icon--small"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 13.5 12.5"
+              >
+                <path id="Rectangle" d="M.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 01.75 0z" class="cls-1"/><path id="Rectangle-2" d="M4.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 014.75 0z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-3" d="M8.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 018.75 0z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-4" d="M12.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11a.76.76 0 01.75-.75z" class="cls-1" data-name="Rectangle"/>
+              </svg>
+              <span class="m-tooltip__content">{{ 'collections.toolbar.grid_4cloumns' | t }}</span>
+            </button>
+            <button class="m:hidden lg:m:flex m-tooltip m-tooltip--top" data-column="5" aria-label="5-column">
+              <svg
+                class="m-svg-icon--small"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 17.5 12.5"
+              >
+                <path id="Rectangle" d="M.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 01.75 0z" class="cls-1"/><path id="Rectangle-2" d="M4.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 014.75 0z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-3" d="M8.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11A.76.76 0 018.75 0z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-4" d="M12.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11a.76.76 0 01.75-.75z" class="cls-1" data-name="Rectangle"/><path id="Rectangle-5" d="M16.75 0a.76.76 0 01.75.75v11a.76.76 0 01-.75.75.76.76 0 01-.75-.75v-11a.76.76 0 01.75-.75z" class="cls-1" data-name="Rectangle"/>
+              </svg>
+              <span class="m-tooltip__content">{{ 'collections.toolbar.grid_5cloumns' | t }}</span>
+            </button>
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

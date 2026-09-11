@@ -1,0 +1,324 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slider_cxiJVg": {
+      "type": "slider",
+      "blocks": {
+        "slider_item_nWHmbP": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/1000041568.png",
+            "content_in_container": true,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": "",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_nWHmbP"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": false,
+        "show_arrows": false,
+        "autorotate": false,
+        "autorotate_speed": 3,
+        "use_content_above": true,
+        "custom_class": "sf-home__slideshow",
+        "animations": "inherit"
+      }
+    },
+    "custom_content_zjkyBm": {
+      "type": "custom-content",
+      "blocks": {
+        "store_location_jUeWj6": {
+          "type": "store_location",
+          "settings": {
+            "width": "33%",
+            "link": "https://maps.app.goo.gl/GqDAuSx7m7gi4FWb8",
+            "text_alignment": "left",
+            "image": "shopify://shop_images/Matawadi_Main_Branch.webp",
+            "title": "Matawadi (Main Branch)",
+            "text": "<p>337, Bhagunagar Society,Near Matawadi,Varachha, Surat, Gujarat 395006</p>",
+            "phone": "<p><a href=\"tel:7000598080\" title=\"tel:7000598080\">7000598080</a></p>",
+            "time": "09:00 AM to 10:00 PM",
+            "text_size": "small",
+            "button_label": "Get Direction",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit",
+            "enable_preload_image": true
+          }
+        },
+        "store_location_geAt3x": {
+          "type": "store_location",
+          "settings": {
+            "width": "33%",
+            "link": "https://maps.app.goo.gl/Hp8ABRkR6AVQMG269",
+            "text_alignment": "left",
+            "image": "shopify://shop_images/Mota_Varachha.webp",
+            "title": "Mota Varachha",
+            "text": "<p>05, Silver impire, VIP Cir To Utran Rd, opp. Gujarat State Electricity, Mota Varachha, Surat, Gujarat 394101</p>",
+            "phone": "<p><a href=\"tel:+91 90810 91710\" title=\"tel:+91 90810 91710\">+91 90810 91710</a></p>",
+            "time": "09:00 AM to 10:00 PM",
+            "text_size": "small",
+            "button_label": "Get Direction",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit",
+            "enable_preload_image": true
+          }
+        },
+        "store_location_Dn3gzJ": {
+          "type": "store_location",
+          "settings": {
+            "width": "33%",
+            "link": "",
+            "text_alignment": "left",
+            "image": "shopify://shop_images/store_coming_soon.png",
+            "title": "Yogi Chowk",
+            "text": "<p>Get ready to enjoy premium quality dry fruits and healthy snacks at Yogichowk. A fresh experience is on the way!</p>",
+            "phone": "<p><a href=\"tel:+91 90810 91710\" title=\"tel:+91 90810 91710\">+91 90810 91710</a></p>",
+            "time": "09:00 AM to 10:00 PM",
+            "text_size": "small",
+            "button_label": "Join the Opening",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit",
+            "enable_preload_image": false
+          }
+        },
+        "store_location_QjHRVX": {
+          "type": "store_location",
+          "settings": {
+            "width": "33%",
+            "link": "",
+            "text_alignment": "left",
+            "image": "shopify://shop_images/store_coming_soon.png",
+            "title": "Katargam",
+            "text": "<p>Soon you’ll be able to explore a wide range of fresh, hygienically packed dry fruits right here in Katargam.</p>",
+            "phone": "<p><a href=\"tel:+91 90810 91710\" title=\"tel:+91 90810 91710\">+91 90810 91710</a></p>",
+            "time": "09:00 AM to 10:00 PM",
+            "text_size": "small",
+            "button_label": "Join the Opening",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit",
+            "enable_preload_image": false
+          }
+        },
+        "store_location_b349BL": {
+          "type": "store_location",
+          "settings": {
+            "width": "33%",
+            "link": "",
+            "text_alignment": "left",
+            "image": "shopify://shop_images/store_coming_soon.png",
+            "title": "Sarthana Jakatnaka",
+            "text": "<p>We’re bringing our finest selection of dry fruits toSarthana Jakatnaka crafted for taste, health, and convenience.</p>",
+            "phone": "<p><a href=\"tel:+91 90810 91710\" title=\"tel:+91 90810 91710\">+91 90810 91710</a></p>",
+            "time": "09:00 AM to 10:00 PM",
+            "text_size": "small",
+            "button_label": "Join the Opening",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "store_location_jUeWj6",
+        "store_location_geAt3x",
+        "store_location_Dn3gzJ",
+        "store_location_QjHRVX",
+        "store_location_b349BL"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "heading": "Visit our stores",
+        "heading_size": "h3",
+        "subheading": "",
+        "img_shape": "shopify://shop_images/section_header_shape.svg",
+        "img_on_top": false,
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "gap": 20,
+        "gap_mobile": 10,
+        "use_scroll_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "enable_preload_image": true,
+        "custom_class": "section__store-location"
+      }
+    },
+    "icon_box_W6Q3WB": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_bJag7y": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/iso.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_QqPbic": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/11.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_J4C7ff": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Make_In_India.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_kjTF8X": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/33.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_Ang7C6": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/55.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_bJag7y",
+        "iconbox_QqPbic",
+        "iconbox_J4C7ff",
+        "iconbox_kjTF8X",
+        "iconbox_Ang7C6"
+      ],
+      "name": "Featured promotion",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "img_on_top": false,
+        "heading": "Our kitchen follows certified standards",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Prepared under certified standards, our kitchen follows hygiene practices to deliver food that is safe, pure, and trustworthy.",
+        "header_alignment": "center",
+        "item_per_row": 5,
+        "item_gap": 50,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "100px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "banner_in_container": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "pdp_icon_box",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slider_cxiJVg",
+    "custom_content_zjkyBm",
+    "icon_box_W6Q3WB"
+  ]
+}

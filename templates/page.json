@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {}
+    },
+    "slider_LbUqtp": {
+      "type": "slider",
+      "blocks": {
+        "slider_item_jN6DPY": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/about_banner_desk.webp",
+            "mb_background": "shopify://shop_images/about_banner_mobile.webp",
+            "content_in_container": true,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": "",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_jN6DPY"
+      ],
+      "disabled": true,
+      "settings": {
+        "container": "container-fluid",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": true,
+        "show_arrows": false,
+        "autorotate": true,
+        "autorotate_speed": 3,
+        "use_content_above": true,
+        "custom_class": "sf-home__slideshow",
+        "animations": "inherit"
+      }
+    },
+    "custom_content_jNDgrB": {
+      "type": "custom-content",
+      "blocks": {
+        "text_w8bqrg": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_1",
+            "title": "Talk about your brand",
+            "subheading": "",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "width": "100%",
+            "alignment": "center",
+            "align_text": "center",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "text_w8bqrg"
+      ],
+      "disabled": true,
+      "name": "Custom content",
+      "settings": {
+        "heading": "A Journey of 30 Years",
+        "heading_size": "h3",
+        "subheading": "OUR STORY SO FAR..",
+        "img_shape": "shopify://shop_images/section_header_shape.svg",
+        "img_on_top": false,
+        "description": "At Patel Dryfruit, our journey began with a simple belief healthy food should never compromise on taste. Rooted in tradition and driven by quality, we set out to bring the finest dry fruits to every household.",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "gap": 30,
+        "gap_mobile": 16,
+        "use_scroll_mobile": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "enable_preload_image": false,
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slider_LbUqtp",
+    "custom_content_jNDgrB"
+  ]
+}

@@ -1,0 +1,219 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-page-header",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "dark",
+        "container": "container-fluid",
+        "layout": "inside",
+        "image_position": "background",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "text_alignment": "center",
+        "text_color": "inherit",
+        "upper_title": false,
+        "show_desc": true,
+        "toggle_showmore": false,
+        "text_line_limit": "1-line",
+        "button_style": "m-button--link",
+        "button_size": "",
+        "collection_all_desc": "",
+        "padding_top": 36,
+        "padding_bottom": 50,
+        "enable_bg_zoom_effect": true
+      }
+    },
+    "image_with_text_2_TPhiHb": {
+      "type": "image-with-text-2",
+      "name": "Image with text overlay",
+      "settings": {
+        "color_scheme": "",
+        "container": "w-full",
+        "hero_size": "adapt",
+        "show_overlay": false,
+        "image": "shopify://shop_images/collection_banner_desk.webp",
+        "image_link": "",
+        "parallax": false,
+        "parallax_direction": "vertical",
+        "content_in_container": true,
+        "content_position": "left bottom",
+        "text_alignment": "left",
+        "text_size": "large",
+        "text_color": "white",
+        "title": "",
+        "dc_title": "{{ collection.title }}",
+        "subtitle": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "m-button--primary",
+        "button_size": "",
+        "text_alignment_mobile": "left",
+        "mb_image": "shopify://shop_images/collection_banner_mobile.webp",
+        "use_content_above": true,
+        "custom_class": "section__collection-banner",
+        "animations": "inherit",
+        "enable_bg_zoom_effect": true,
+        "enable_preload_image": true
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
+        ".m-collection-filters-form {margin-bottom: 0;}"
+      ],
+      "settings": {
+        "container": "container",
+        "grid_layout": "grid",
+        "grid_columns": "4",
+        "show_columns_switcher": false,
+        "pagination_limit": 16,
+        "paginate_type": "infinite",
+        "show_sorting": true,
+        "show_filter": true,
+        "filters_type": "storefront_filters",
+        "sidebar": "fixed",
+        "sidebar_title": "Filters",
+        "limit_height_widget": true,
+        "limit_height": 300,
+        "change_product_variant_on_fitlering": true,
+        "show_product_count": true,
+        "collapsed_groups": "Product type, Brand, Vendor, Size",
+        "color_swatches": "color,colour,couleur,farbe",
+        "color_swatches_design": "list"
+      }
+    },
+    "icon_box_GY8pyF": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_xijJkc": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/iso.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_W7h7tN": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/11.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_qwzGJe": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Make_In_India.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_RcGeiT": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/33.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_8fRRjP": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/55.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_xijJkc",
+        "iconbox_W7h7tN",
+        "iconbox_qwzGJe",
+        "iconbox_RcGeiT",
+        "iconbox_8fRRjP"
+      ],
+      "name": "Featured promotion",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "img_on_top": false,
+        "heading": "Our kitchen follows certified standards",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Prepared under certified standards, our kitchen follows hygiene practices to deliver food that is safe, pure, and trustworthy.",
+        "header_alignment": "center",
+        "item_per_row": 5,
+        "item_gap": 50,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "100px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "banner_in_container": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "pdp_icon_box",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "image_with_text_2_TPhiHb",
+    "main",
+    "icon_box_GY8pyF"
+  ]
+}

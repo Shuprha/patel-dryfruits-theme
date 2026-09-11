@@ -1,0 +1,325 @@
+{%- liquid
+  assign st = section.settings
+
+  assign animation_effect = settings.animations
+  assign animated = false
+  if animation_effect != 'none'
+    assign animated = true
+    if section.settings.animations != 'inherit'
+      assign animation_effect = section.settings.animations
+    endif
+  endif
+
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+-%}
+<section data-section-type="contact-page" data-section-id="{{ section.id }}" class="m-section m-contact-form">
+  <div class="{{ container }} m-section-my">
+    <div class="m-row{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+      <div class="m-contact-form__main{% if section.blocks.size > 0 %} xl:m:w-8/12 m:w-full{% else %} m-contact-form__main--full xl:m:w-6/12 m:w-full{% endif %}">
+        <div class="m-contact-form__main-inner">
+          {%- if st.title != blank -%}
+            <h3 class="m-contact-form__heading">{{ st.title }}</h3>
+          {%- endif -%}
+          {%- if st.description != blank -%}
+            <div class="m-contact-form__description rte">{{ st.description }}</div>
+          {%- endif -%}
+          {%- form 'contact' -%}
+            {%- capture success_message -%}
+            {{ 'contact.form.post_success' | t }}
+          {%- endcapture -%}
+            {% render 'form__success', form: form, success_message: success_message %}
+            {% render 'form__error', form: form %}
+            <div class="m-contact-form__form-fields m:flex m:flex-wrap">
+              {% if section.settings.show_name %}
+                <div class="m-contact-form__name m:column m:w-full">
+                  <input
+                    type="text"
+                    class="form-field form-field--input"
+                    name="contact[name]"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                    id="inputName"
+                    placeholder="{{ 'contact.form.name' | t }}"
+                  >
+                </div>
+              {% endif %}
+              <div class="m-contact-form__email m:column m:w-full md:m:w-1/2">
+                <input
+                  type="email"
+                  class="form-field form-field--input"
+                  name="contact[email]"
+                  required
+                  autocorrect="off"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  id="inputEmail"
+                  placeholder="{{ 'contact.form.email' | t }}"
+                >
+              </div>
+              {% if section.settings.show_phone %}
+                <div class="m-contact-form__phone m:column m:w-full md:m:w-1/2">
+                  <input
+                    type="tel"
+                    class="form-field form-field--input"
+                    name="contact[phone]"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                    id="inputPhone"
+                    placeholder="{{ 'contact.form.phone' | t }}"
+                  >
+                </div>
+              {% endif %}
+            </div>
+            <div class="m-contact-form__message m:w-full">
+              <textarea
+                class="form-field form-field--input"
+                name="contact[body]"
+                rows="6"
+                required
+                placeholder="{{ 'contact.form.message' | t }}"
+                id="textareaMessage"
+              >{%- if form.body -%}{{ form.body }}{%- endif -%}</textarea>
+            </div>
+            {% if section.settings.show_signup_email %}
+              <div class="m-contact-form__save">
+                <label class="form-field--checkbox">
+                  <input type="checkbox" name="contact[saveInfo]">
+                  <span class="form-field--checkbox__label">{{ 'contact.form.save_infor_message' | t }}</span>
+                  <span class="form-field--checkbox__icon">
+                    <svg
+                      class="m-svg-icon--medium"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                      fill="none"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M18.5 1.5H1.5L1.5 18.5H18.5V1.5ZM1.5 0.5C0.947715 0.5 0.5 0.947715 0.5 1.5V18.5C0.5 19.0523 0.947715 19.5 1.5 19.5H18.5C19.0523 19.5 19.5 19.0523 19.5 18.5V1.5C19.5 0.947715 19.0523 0.5 18.5 0.5H1.5Z" fill-rule="evenodd" fill="currentColor"/>
+                      <path d="M14.9975 6.09084C15.201 6.27746 15.2147 6.59375 15.0281 6.79728L8.91631 13.4627C8.82231 13.5652 8.68987 13.6239 8.55079 13.6247C8.41172 13.6256 8.27857 13.5684 8.18335 13.4671L4.99513 10.0731C4.80606 9.87179 4.81596 9.55536 5.01723 9.3663C5.21849 9.17723 5.53492 9.18713 5.72399 9.3884L8.54335 12.3897L14.291 6.12145C14.4776 5.91791 14.7939 5.90421 14.9975 6.09084Z" fill="currentColor"/>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+            {% endif %}
+            <button type="submit" class="m-button m-button--primary">{{ 'contact.form.send' | t }}</button>
+          {%- endform -%}
+        </div>
+        <div class="m__contact-box">
+          <!-- Email -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clip-path="url(#clip0_778_4189)">
+                <path d="M21.8809 3.53674H2.09961C0.934156 3.53674 -0.00976562 4.48652 -0.00976562 5.64612V18.3024C-0.00976562 19.4689 0.941094 20.4117 2.09961 20.4117H21.8809C23.0366 20.4117 23.9902 19.4728 23.9902 18.3024V5.64612C23.9902 4.48859 23.0501 3.53674 21.8809 3.53674ZM21.5855 4.94299L13.4818 13.0039C13.0834 13.4024 12.5537 13.6218 11.9902 13.6218C11.4268 13.6218 10.8971 13.4023 10.4974 13.0026L2.39502 4.94299H21.5855ZM1.39648 18.0161V5.93323L7.47327 11.978L1.39648 18.0161ZM2.39591 19.0055L8.4703 12.9697L9.50431 13.9983C10.1683 14.6623 11.0512 15.028 11.9902 15.028C12.9293 15.028 13.8121 14.6623 14.4748 13.9996L15.5102 12.9697L21.5846 19.0055H2.39591ZM22.584 18.0161L16.5072 11.978L22.584 5.93323V18.0161Z" fill="#006452"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_778_4189">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <a href="mailto:support@pateldryfruit.com">support@pateldryfruit.com</a>
+          </div>
+
+          <!-- Phone -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clip-path="url(#clip0_778_4195)">
+                <path d="M19.0082 15.0778C18.5169 14.5662 17.9242 14.2927 17.2961 14.2927C16.6731 14.2927 16.0754 14.5612 15.5638 15.0728L13.9631 16.6684C13.8314 16.5974 13.6997 16.5316 13.5731 16.4657C13.3907 16.3746 13.2185 16.2885 13.0716 16.1973C11.5723 15.245 10.2097 14.004 8.90282 12.3983C8.26965 11.5979 7.84416 10.9242 7.53517 10.2404C7.95053 9.86051 8.3355 9.46541 8.71033 9.08551C8.85216 8.94368 8.99399 8.79678 9.13582 8.65495C10.1996 7.59123 10.1996 6.21345 9.13582 5.14972L7.75298 3.76688C7.59595 3.60985 7.43386 3.44776 7.2819 3.28567C6.97798 2.97161 6.65886 2.64743 6.32961 2.34351C5.83827 1.85723 5.25069 1.5989 4.63271 1.5989C4.01474 1.5989 3.41703 1.85723 2.91049 2.34351L2.90036 2.35364L1.17813 4.09106C0.529766 4.73943 0.159995 5.52962 0.0789487 6.44645C-0.0426201 7.92554 0.393001 9.30332 0.727316 10.205C1.54791 12.4185 2.77372 14.47 4.60232 16.6684C6.82095 19.3176 9.4904 21.4095 12.5398 22.8836C13.7048 23.4357 15.2599 24.0891 16.9973 24.2006C17.1036 24.2056 17.2151 24.2107 17.3164 24.2107C18.4865 24.2107 19.4692 23.7903 20.2391 22.9545C20.2442 22.9444 20.2543 22.9393 20.2594 22.9292C20.5228 22.61 20.8267 22.3213 21.1458 22.0123C21.3636 21.8046 21.5865 21.5868 21.8043 21.3589C22.3058 20.8372 22.5692 20.2293 22.5692 19.6063C22.5692 18.9782 22.3007 18.3754 21.7891 17.8689L19.0082 15.0778ZM20.8216 20.4117C20.8166 20.4117 20.8166 20.4167 20.8216 20.4117C20.6241 20.6244 20.4215 20.8169 20.2036 21.0296C19.8744 21.3437 19.5401 21.6729 19.226 22.0427C18.7144 22.5898 18.1117 22.8481 17.3215 22.8481C17.2455 22.8481 17.1644 22.8481 17.0884 22.843C15.584 22.7468 14.186 22.1592 13.1375 21.6577C10.2705 20.2698 7.75298 18.2994 5.66098 15.8022C3.93369 13.7203 2.77879 11.7955 2.01392 9.72881C1.54284 8.46754 1.37062 7.48485 1.4466 6.55789C1.49725 5.96524 1.72519 5.4739 2.14562 5.05348L3.87291 3.32619C4.12111 3.09318 4.38451 2.96655 4.64284 2.96655C4.96196 2.96655 5.2203 3.15903 5.38239 3.32112L5.39758 3.33632C5.70657 3.62504 6.00036 3.9239 6.30935 4.24302C6.46638 4.40511 6.62847 4.5672 6.79056 4.73436L8.1734 6.11721C8.71033 6.65413 8.71033 7.15054 8.1734 7.68747C8.02651 7.83436 7.88468 7.98126 7.73778 8.12309C7.31229 8.55871 6.90706 8.96394 6.46638 9.35904C6.45625 9.36917 6.44612 9.37424 6.44105 9.38437C6.00543 9.81999 6.08647 10.2455 6.17765 10.5342L6.19285 10.5798C6.55249 11.451 7.05902 12.2716 7.82896 13.2492L7.83403 13.2543C9.23207 14.9765 10.7061 16.3189 12.3321 17.3471C12.5398 17.4788 12.7525 17.5852 12.9551 17.6865C13.1375 17.7777 13.3097 17.8638 13.4566 17.955C13.4768 17.9651 13.4971 17.9803 13.5174 17.9904C13.6896 18.0765 13.8517 18.1171 14.0188 18.1171C14.4393 18.1171 14.7027 17.8537 14.7888 17.7675L16.5211 16.0352C16.6933 15.863 16.9669 15.6553 17.286 15.6553C17.6001 15.6553 17.8584 15.8528 18.0154 16.0251L18.0255 16.0352L20.8166 18.8262C21.3383 19.3429 21.3383 19.8747 20.8216 20.4117ZM13.0108 5.91966C14.338 6.14253 15.5435 6.77064 16.5059 7.73306C17.4684 8.69548 18.0914 9.90103 18.3193 11.2282C18.3751 11.5625 18.6638 11.7955 18.993 11.7955C19.0336 11.7955 19.069 11.7904 19.1095 11.7853C19.4844 11.7246 19.7326 11.37 19.6718 10.9952C19.3983 9.38943 18.6385 7.92554 17.4785 6.76557C16.3185 5.6056 14.8546 4.8458 13.2489 4.57227C12.8741 4.51148 12.5246 4.75969 12.4587 5.12946C12.3929 5.49923 12.636 5.85887 13.0108 5.91966ZM24.0128 10.7976C23.562 8.15348 22.3159 5.74743 20.4012 3.83272C18.4865 1.91802 16.0804 0.671936 13.4363 0.221119C13.0665 0.155269 12.717 0.408537 12.6512 0.778309C12.5904 1.15315 12.8386 1.50266 13.2134 1.56851C15.5739 1.96867 17.7267 3.08812 19.4388 4.79514C21.1509 6.50724 22.2653 8.66002 22.6654 11.0205C22.7211 11.3548 23.0099 11.5878 23.3391 11.5878C23.3796 11.5878 23.4151 11.5827 23.4556 11.5777C23.8254 11.522 24.0787 11.1674 24.0128 10.7976Z" fill="#006452"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_778_4195">
+                  <rect width="24" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <a href="tel:7000598080">7000598080</a>
+          </div>
+
+          <!-- Address -->
+          <div class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <g clip-path="url(#clip0_778_4202)">
+                <path d="M20.7773 5.41728C19.2037 2.11358 15.9607 0.0257628 12.3104 -0.0222329C8.65204 -0.0702287 5.40906 1.94559 3.77958 5.2573C2.08619 8.68899 2.48558 12.6646 4.83395 15.6484L10.8966 23.3597C11.0479 23.5521 11.2408 23.7076 11.4608 23.8145C11.6808 23.9214 11.9221 23.9769 12.1666 23.9769C12.4111 23.9769 12.6525 23.9214 12.8725 23.8145C13.0924 23.7076 13.2853 23.5521 13.4366 23.3597L19.659 15.4404C21.9195 12.5607 22.3429 8.72899 20.7773 5.42528V5.41728ZM18.413 14.4485L12.1586 22.3678L6.096 14.6565C4.13902 12.1687 3.80354 8.83298 5.21735 5.96924C6.57525 3.21748 9.17124 1.58562 12.1746 1.58562H12.2944C15.3776 1.63362 18.0136 3.32147 19.3395 6.11322C20.6655 8.90498 20.322 12.0167 18.413 14.4485Z" fill="#006452"/>
+                <path d="M12.1664 4.9054C9.76215 4.9054 7.80518 6.86522 7.80518 9.27301C7.80518 11.6808 9.76215 13.6406 12.1664 13.6406C14.5707 13.6406 16.5277 11.6808 16.5277 9.27301C16.5277 6.86522 14.5707 4.9054 12.1664 4.9054ZM12.1664 12.0328C11.445 12.0154 10.7589 11.7162 10.2547 11.199C9.75057 10.6818 9.46836 9.98775 9.46836 9.26501C9.46836 8.54227 9.75057 7.84818 10.2547 7.33102C10.7589 6.81386 11.445 6.51463 12.1664 6.49725C12.8879 6.51463 13.574 6.81386 14.0782 7.33102C14.5823 7.84818 14.8645 8.54227 14.8645 9.26501C14.8645 9.98775 14.5823 10.6818 14.0782 11.199C13.574 11.7162 12.8879 12.0154 12.1664 12.0328Z" fill="#006452"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_778_4202">
+                  <rect width="23.9651" height="24" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+            <a href="javascript:void(0)"> Surat, Gujarat 394101</a>
+          </div>
+        </div>
+      </div>
+      {% if section.blocks.size > 0 %}
+        <div class="m-contact-form__info m:flex m:flex-wrap m:w-full xl:m:w-4/12">
+          {% for block in section.blocks %}
+            <div class="m-info-box m:column m:w-full md:m:w-1/2 lg:m:w-3/12 xl:m:w-full">
+              <h3>{{ block.settings.title }}</h3>
+              {% case block.type %}
+                {% when 'textblock' %}
+                  <div class="m-info-box__content rte">{{ block.settings.content }}</div>
+                {% else %}
+                  {% render 'social-media-links' %}
+              {% endcase %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <div class="contact-form__img m:w-full lg:m:w-6/12">
+        {% if section.settings.contact_form_img %}
+          <img
+            src="{{ section.settings.contact_form_img | image_url }}"
+            alt="Contact form image"
+            loading="lazy"
+            width="100%"
+            height="auto"
+          >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contact form image"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_form_img",
+      "label": "Contact form image"
+    },
+    {
+      "type": "header",
+      "content": "General"
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container-fluid",
+      "options": [
+        {
+          "value": "container-fluid",
+          "label": "Default"
+        },
+        {
+          "value": "w-full",
+          "label": "Full width"
+        },
+        {
+          "value": "container",
+          "label": "Use container box"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "We would love to hear from you."
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>If you’ve got great products your making or looking to work with us then drop us a line.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Contact form"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_name",
+      "label": "Show field name",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "Show field phone number",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_signup_email",
+      "label": "Show email sign up",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Animations"
+    },
+    {
+      "type": "select",
+      "id": "animations",
+      "label": "Visible in the view animation",
+      "default": "inherit",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Inherit global setting"
+        },
+        {
+          "value": "fade-in",
+          "label": "Fade in"
+        },
+        {
+          "value": "fade-in-up",
+          "label": "Fade in up"
+        },
+        {
+          "value": "fade-in-left",
+          "label": "Fade in left"
+        },
+        {
+          "value": "fade-in-right",
+          "label": "Fade in right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "textblock",
+      "name": "Text block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Block Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>7895 Piermont Dr NE Albuquerque, NM 198866, <a href='#'>See Our Stores</a></p>"
+        }
+      ]
+    },
+    {
+      "type": "socialmedia",
+      "name": "Social media",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Social Media"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

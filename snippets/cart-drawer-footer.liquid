@@ -1,0 +1,252 @@
+<style>
+  .rewards-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 10px;
+  }
+.cart-drawer-rewards:has(.rewards-carousel .reward-card) {
+    background: #f5f5f5;
+    padding: 12px;
+    border-radius: 20px;
+}
+  .rewards-carousel::-webkit-scrollbar {
+    height: 5px;
+    margin-top: 10px;
+  }
+
+  .rewards-carousel::-webkit-scrollbar-track {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  .rewards-carousel::-webkit-scrollbar-thumb {
+    background: #111;
+    width: 20px;
+    border-radius: 10px;
+  }
+
+  .reward-card {
+    flex: 0 0 60%;
+    scroll-snap-align: start;
+    background: #fff;
+    color: #111;
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    box-sizing: border-box;
+  }
+  /* Variation for red card */
+  .reward-card.red-theme {
+    background: #b91c1c;
+  }
+  .reward-image-container {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .reward-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px; /* Optional */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  .reward-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .reward-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 8px;
+  }
+  .reward-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .reward-tag {
+    background: white;
+    color: black;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .reward-add-btn {
+    border: none;
+    width: 100%;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .reward-add-btn:hover {
+    opacity: 0.9;
+  }
+  .cart-drawer-rewards button.m-add-to-cart.m-button.m-button--white-btn {
+    font-weight: 500;
+    background: #e31e24;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 1;
+  }
+</style>
+
+{%- assign cart_first_product_id = cart.items.first.product_id -%}
+{%- if cart_first_product_id != blank -%}
+  {%- assign fetch_url = routes.product_recommendations_url
+    | append: '?section_id='
+    | append: section.id
+    | append: '&product_id='
+    | append: cart_first_product_id
+    | append: '&limit=4&intent=related'
+  -%}
+{%- else -%}
+  {%- assign fetch_url = '' -%}
+{%- endif -%}
+
+
+<product-recommendations class="cart-drawer-rewards cart_drawer_anandas" data-url="{{ fetch_url }}">
+  {% if settings.cart_drawer_rewards_title %}
+    <p class="cart-drawer-rewards_title">{{ settings.cart_drawer_rewards_title }}</p>
+  {% endif %}
+  <div class="rewards-carousel">
+    {% assign cart_ids = cart.items | map: 'product_id' %}
+    {%- if recommendations.performed and recommendations.products_count > 0 -%}
+      {% for product in recommendations.products %}
+        {% unless cart_ids contains product.id %}
+          <div class="reward-card">
+            <div class="reward-image-container">
+              <img
+                src="{{ product.featured_image | image_url: width: 200 }}"
+                class="reward-image"
+                alt="Product 1"
+                width=""
+                height=""
+              >
+            </div>
+            <div class="reward-content">
+              <div class="reward-content-top">
+                <div class="reward-title">{{ product.title }}</div>
+                <div class="reward-price-row">
+                  <span>{{ product.price | money_without_trailing_zeros }}</span>
+                </div>
+              </div>
+              {% render 'product-card-quick-add-btn',
+                product: product,
+                quick_add_text: 'Add',
+                section: section,
+                button_style: 'white-btn '
+              %}
+            </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    {%- else -%}
+      {% for product in cart_rewards.products %}
+        {% unless cart_ids contains product.id %}
+          <div class="reward-card">
+            <div class="reward-image-container">
+              <img
+                src="{{ product.featured_image | image_url: width: 200 }}"
+                class="reward-image"
+                alt="Product 1"
+                width=""
+                height=""
+              >
+            </div>
+            <div class="reward-content">
+              <div class="reward-content-top">
+                <div class="reward-title">{{ product.title }}</div>
+                <div class="reward-price-row">
+                  <span>{{ product.price | money_without_trailing_zeros }}</span>
+                </div>
+              </div>
+              {% render 'product-card-quick-add-btn',
+                product: product,
+                quick_add_text: 'Add',
+                section: section,
+                button_style: 'white-btn '
+              %}
+            </div>
+          </div>
+        {% endunless %}
+      {% endfor %}
+    {%- endif -%}
+  </div>
+</product-recommendations>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!customElements.get('product-recommendations')) {
+      var recommendationsContainer = document.querySelector('.cart_drawer_anandas');
+      if (!recommendationsContainer) return;
+
+      var fetchUrl = recommendationsContainer.dataset.url;
+      if (!fetchUrl) return;
+
+      fetch(fetchUrl)
+        .then((response) => response.text())
+        .then((text) => {
+          var html = document.createElement('div');
+          html.innerHTML = text;
+
+          var newRecommendations = html.querySelector('.cart_drawer_anandas');
+          if (newRecommendations && newRecommendations.innerHTML.trim().length > 0) {
+            var hasProducts = newRecommendations.querySelector('.rewards-carousel');
+
+            if (hasProducts && hasProducts.innerHTML.trim().length > 0) {
+              recommendationsContainer.innerHTML = newRecommendations.innerHTML;
+            }
+          }
+        })
+        .catch((e) => {
+          console.error('Error fetching Shopify recommendations:', e);
+        });
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (customElements.get('product-recommendations')) return;
+
+    const container = document.querySelector('.cart_drawer_anandas');
+    if (!container?.dataset.url) return;
+
+    fetch(container.dataset.url)
+      .then((res) => res.text())
+      .then((text) => {
+        const div = document.createElement('div');
+        div.innerHTML = text;
+
+        const newRecs = div.querySelector('.cart_drawer_anandas');
+        if (newRecs?.querySelector('.rewards-carousel')?.innerHTML.trim()) {
+          container.innerHTML = newRecs.innerHTML;
+        }
+      })
+      .catch(console.error);
+  });
+</script>

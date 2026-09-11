@@ -1,0 +1,457 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-about-us",
+      "disabled": true,
+      "settings": {}
+    },
+    "slider_fbmDwk": {
+      "type": "slider",
+      "blocks": {
+        "slider_item_V8yg3N": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/about_banner_desk.webp",
+            "mb_background": "shopify://shop_images/about_banner_mobile.webp",
+            "content_in_container": true,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "",
+            "description": "",
+            "image_link": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "sf__btn-secondary",
+            "button_size": "",
+            "second_button_text": "",
+            "second_button_link": "",
+            "second_button_style": "m-button--primary",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "The ReCotton Tee",
+            "footer_button": "Shop Now",
+            "footer_link": "",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_V8yg3N"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": false,
+        "show_arrows": false,
+        "autorotate": false,
+        "autorotate_speed": 3,
+        "use_content_above": true,
+        "custom_class": "sf-home__slideshow",
+        "animations": "inherit"
+      }
+    },
+    "custom_content_bk6y7k": {
+      "type": "custom-content",
+      "blocks": {
+        "image_CCXRRL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1000041497.png",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "order--1",
+            "animations": "inherit",
+            "enable_preload_image": true
+          }
+        },
+        "text_QUahFU": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_3",
+            "layout_3_bg": "#fcf2c5",
+            "icon_image": "shopify://shop_images/vision01.svg",
+            "icon_width": 40,
+            "title": "India’s Most Trusted <br>\nDry Fruit Brand",
+            "subheading": "",
+            "text": "<p>We envision Patel Dryfruit as a household name across India and beyond known for innovation, quality, and customer trust. premium quality, authentic taste, and unmatched customer satisfaction.</p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "order--2",
+            "animations": "inherit"
+          }
+        },
+        "text_QREDWX": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_3",
+            "layout_3_bg": "#fcf2c5",
+            "icon_image": "shopify://shop_images/bite01.svg",
+            "icon_width": 40,
+            "title": "Fueling Health, <br>\nOne Bite at a Time",
+            "subheading": "",
+            "text": "<p>Our mission is to make premium-quality dry fruits accessible to everyone by delivering products that are 100% natural and hygienically processed. Rich in nutrition and free from unnecessary additives.</p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "order--3",
+            "animations": "inherit"
+          }
+        },
+        "image_dDMdHn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1000041500.png",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "order--4",
+            "animations": "inherit",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "image_CCXRRL",
+        "text_QUahFU",
+        "text_QREDWX",
+        "image_dDMdHn"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "heading": "A Journey of 45 Years",
+        "heading_size": "h2",
+        "subheading": "OUR STORY SO FAR..",
+        "img_shape": "shopify://shop_images/section_header_shape.svg",
+        "img_on_top": false,
+        "description": "At Patel Dryfruit, our journey began with a simple belief healthy food should never compromise on taste. Rooted in tradition and driven by quality, we set out to bring the finest dry fruits to every household.",
+        "header_alignment": "center",
+        "container": "container",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "gap": 10,
+        "gap_mobile": 10,
+        "use_scroll_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "enable_preload_image": true,
+        "custom_class": "au__section-journey"
+      }
+    },
+    "icon_box_JnaKYx": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_JGQpCe": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+            "image_by_url": "",
+            "title": "5+",
+            "description": "<p>Retail Locations</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_8xpLzC": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+            "image_by_url": "",
+            "title": "100k",
+            "description": "<p>Happy Customers Served</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_6JzmDx": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+            "image_by_url": "",
+            "title": "100%",
+            "description": "<p>Natural & Fresh</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_M4h3hV": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+            "image": "shopify://shop_images/Dried_Fruits.svg",
+            "image_by_url": "",
+            "title": "5+",
+            "description": "<p>Sourcing Regions</p>",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_JGQpCe",
+        "iconbox_8xpLzC",
+        "iconbox_6JzmDx",
+        "iconbox_M4h3hV"
+      ],
+      "name": "Featured promotion",
+      "settings": {
+        "container": "container",
+        "color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+        "img_shape": "shopify://shop_images/section_header_shape_yellow.svg",
+        "img_on_top": true,
+        "heading": "Our Growth at a Glance",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Built on trust, powered by quality",
+        "header_alignment": "center",
+        "item_per_row": 4,
+        "item_gap": 24,
+        "item_gap_mobile": 12,
+        "card_style": "vertical",
+        "image_max_width": "100px",
+        "content_alignment": "center",
+        "hover_effect": "none",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "banner_in_container": false,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "custom_class": "section__gift-showcase m-my-0 section__inline-20 m-relative au__section-growth",
+        "animations": "inherit"
+      }
+    },
+    "custom_content_DrWCAR": {
+      "type": "custom-content",
+      "blocks": {
+        "text_MPrTzx": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_1",
+            "layout_3_bg": "#fff4cd",
+            "icon_width": 40,
+            "title": "Crafted for <br>\nTaste & Nutrition",
+            "subheading": "",
+            "text": "<p>From classic almonds and cashews to innovative roasted and flavored variants, our products are designed to fit every lifestyle.</p><p>Whether you need a quick energy boost, a healthy snack, or a premium gift, Patel Dryfruit delivers excellence in every pack.</p>",
+            "width": "50%",
+            "alignment": "start",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "image_X6hHHL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/about03.webp",
+            "link": "",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "order--4",
+            "animations": "inherit",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "text_MPrTzx",
+        "image_X6hHHL"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "subheading": "",
+        "img_on_top": false,
+        "description": "",
+        "header_alignment": "center",
+        "container": "container",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "gap": 80,
+        "gap_mobile": 20,
+        "use_scroll_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "enable_preload_image": true,
+        "custom_class": "au__section-nutrition"
+      }
+    },
+    "icon_box_RPeHGK": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_CmVzUM": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/iso.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_eh4tgR": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/11.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_nbCMyQ": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Make_In_India.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_eUPjaj": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/33.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_Pqi9W4": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/55.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_CmVzUM",
+        "iconbox_eh4tgR",
+        "iconbox_nbCMyQ",
+        "iconbox_eUPjaj",
+        "iconbox_Pqi9W4"
+      ],
+      "name": "Featured promotion",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "img_on_top": false,
+        "heading": "Our kitchen follows certified standards",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Prepared under certified standards, our kitchen follows hygiene practices to deliver food that is safe, pure, and trustworthy.",
+        "header_alignment": "center",
+        "item_per_row": 5,
+        "item_gap": 50,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "100px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "banner_in_container": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "pdp_icon_box",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slider_fbmDwk",
+    "custom_content_bk6y7k",
+    "icon_box_JnaKYx",
+    "custom_content_DrWCAR",
+    "icon_box_RPeHGK"
+  ]
+}

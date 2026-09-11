@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-contact",
+      "disabled": true,
+      "settings": {
+        "container": "container"
+      }
+    },
+    "custom_content_tW7GKG": {
+      "type": "custom-content",
+      "name": "Custom content",
+      "settings": {
+        "heading": "Contact Us",
+        "heading_size": "h3",
+        "subheading": "",
+        "img_on_top": false,
+        "description": "We’d Love to Hear From You.",
+        "header_alignment": "left",
+        "container": "container",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "gap": 0,
+        "gap_mobile": 0,
+        "use_scroll_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 50,
+        "enable_preload_image": true,
+        "custom_class": "m-my-0 section__contact-form-header"
+      }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "contact_form_img": "shopify://shop_images/new-contact_form_img.png",
+        "container": "container",
+        "title": "Get in Touch",
+        "description": "<p>We’re just a message away for support, feedback, or collaborations.</p>",
+        "show_name": true,
+        "show_phone": true,
+        "show_signup_email": false,
+        "animations": "inherit"
+      }
+    },
+    "icon_box_T9FXKQ": {
+      "type": "icon-box",
+      "blocks": {
+        "iconbox_tUHWFC": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/iso.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_qP9WaF": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/11.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_AEVgAi": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/Make_In_India.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_7JcTbK": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/33.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        },
+        "iconbox_xwyEjx": {
+          "type": "iconbox",
+          "settings": {
+            "card_color_scheme": "",
+            "image": "shopify://shop_images/55.png",
+            "image_by_url": "",
+            "title": "",
+            "description": "",
+            "link": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "m-button--link",
+            "button_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "iconbox_tUHWFC",
+        "iconbox_qP9WaF",
+        "iconbox_AEVgAi",
+        "iconbox_7JcTbK",
+        "iconbox_xwyEjx"
+      ],
+      "name": "Featured promotion",
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "img_on_top": false,
+        "heading": "Our kitchen follows certified standards",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "Prepared under certified standards, our kitchen follows hygiene practices to deliver food that is safe, pure, and trustworthy.",
+        "header_alignment": "center",
+        "item_per_row": 5,
+        "item_gap": 50,
+        "item_gap_mobile": 10,
+        "card_style": "vertical",
+        "image_max_width": "100px",
+        "content_alignment": "center",
+        "hover_effect": "scaling-up",
+        "enable_slider": false,
+        "show_pagination": false,
+        "show_navigation": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": true,
+        "banner_in_container": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_class": "pdp_icon_box",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_content_tW7GKG",
+    "contact-form",
+    "icon_box_T9FXKQ"
+  ]
+}

@@ -1,0 +1,30 @@
+<a
+  href="{{ routes.cart_url }}"
+  class="m-cart-icon-bubble"
+  aria-label="{{ cart.item_count }}"
+>
+  <span class="m-tooltip m:block m-tooltip--bottom m-tooltip--style-2">
+    {% comment %}
+      <svg
+        class="m-svg-icon--medium"
+        fill="currentColor"
+        stroke="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+      >
+        <path d="M352 128C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128H0v304c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V128h-96zM224 48c44.112 0 80 35.888 80 80H144c0-44.112 35.888-80 80-80zm176 384c0 17.645-14.355 32-32 32H80c-17.645 0-32-14.355-32-32V176h48v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h160v40c0 13.255 10.745 24 24 24s24-10.745 24-24v-40h48v256z"/>
+      </svg>
+    {% endcomment %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M15.3709 3.44L18.5819 9.002L22.0049 9.00218V11.0022L20.8379 11.002L20.0813 20.0852C20.0381 20.6035 19.6048 21.0022 19.0847 21.0022H4.92502C4.40493 21.0022 3.97166 20.6035 3.92847 20.0852L3.17088 11.002L2.00488 11.0022V9.00218L5.42688 9.002L8.63886 3.44L10.3709 4.44L7.73688 9.002H16.2719L13.6389 4.44L15.3709 3.44ZM18.8309 11.002L5.17788 11.0022L5.84488 19.0022H18.1639L18.8309 11.002ZM13.0049 13.0022V17.0022H11.0049V13.0022H13.0049ZM9.00488 13.0022V17.0022H7.00488V13.0022H9.00488ZM17.0049 13.0022V17.0022H15.0049V13.0022H17.0049Z" fill="#1F1B20"/>
+    </svg>
+    <span class="m-tooltip__content">{{ 'layout.cart.title' | t }}</span>
+  </span>
+  <m-cart-count class="m-cart-count-bubble m-cart-count{% if cart == empty %} m:hidden{% endif %}">
+    {%- if cart.item_count < 100 -%}
+      {{- cart.item_count -}}
+    {%- else -%}
+      99+
+    {%- endif -%}
+  </m-cart-count>
+</a>
