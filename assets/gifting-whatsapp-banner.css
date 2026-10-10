@@ -1,0 +1,124 @@
+.m-gwb__wrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--gwb-section-bg, #f3e4c9);
+  min-height: 300px;
+}
+
+.m-gwb__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.m-gwb__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.m-gwb__card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 460px;
+  background-color: var(--gwb-card-bg, #b02532);
+  color: #ffffff;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.m-gwb__ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.m-gwb__ornament span {
+  width: 5px;
+  height: 5px;
+  background-color: #f0c25e;
+  transform: rotate(45deg);
+}
+
+.m-gwb__ornament span:nth-child(3) {
+  width: 7px;
+  height: 7px;
+}
+
+.m-gwb__ornament span:before,
+.m-gwb__ornament span:after {
+  content: '';
+}
+
+.m-gwb__heading {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.m-gwb__text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  margin-bottom: 24px;
+  max-width: 320px;
+}
+
+.m-gwb__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: var(--gwb-card-bg, #b02532);
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.m-gwb__wa-icon {
+  color: #25d366;
+  flex-shrink: 0;
+}
+
+.m-gwb__button-divider {
+  width: 1px;
+  height: 16px;
+  background-color: rgba(176, 37, 50, 0.25);
+}
+
+@media screen and (max-width: 749px) {
+  .m-gwb__wrapper {
+    min-height: 260px;
+  }
+
+  .m-gwb__card {
+    max-width: 82%;
+    padding: 28px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .m-gwb__card {
+    max-width: 88%;
+    padding: 24px 16px;
+  }
+
+  .m-gwb__button {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 18px;
+  }
+}

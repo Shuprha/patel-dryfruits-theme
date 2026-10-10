@@ -1,0 +1,541 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "gifting_hero": {
+      "type": "slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slider_item",
+          "settings": {
+            "background": "shopify://shop_images/639542d7f65c92435054c6df4d6531f8d07194c5.png",
+            "mb_background": "",
+            "content_in_container": true,
+            "content_position": "left middle",
+            "text_alignment": "left",
+            "text_size": "large",
+            "text_color": "black",
+            "subheading": "",
+            "title": "Gifts that\nfeel handpicked.",
+            "description": "<p>Dry fruit boxes for any occasion or chat on WhatsApp to customize.</p>",
+            "image_link": "",
+            "button_text": "Browse Gift Boxes",
+            "button_link": "/collections/gift-boxes-hampers",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "second_button_text": "Chat on WhatsApp",
+            "second_button_link": "https://wa.me/919081091710",
+            "second_button_style": "m-button--white",
+            "second_button_size": "",
+            "show_footer": false,
+            "footer_alignment": "end",
+            "footer_text": "",
+            "footer_button": "",
+            "footer_link": "",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "slide_1"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "slideshow_height": "adapt",
+        "show_overlay": false,
+        "dots_position": "bottom",
+        "dots_color": "dark",
+        "show_dots": false,
+        "show_arrows": false,
+        "autorotate": false,
+        "autorotate_speed": 3,
+        "use_content_above": true,
+        "custom_class": "m-gifting__hero",
+        "animations": "inherit"
+      }
+    },
+    "gifting_two_ways": {
+      "type": "custom-content",
+      "blocks": {
+        "text_browse": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_3",
+            "layout_3_bg": "#FCF2C5",
+            "icon_image": "",
+            "icon_width": 40,
+            "title": "Browse\nthe catalogue",
+            "subheading": "",
+            "text": "<p>Explore our gift boxes and hampers, ready to order.</p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "Browse Now",
+            "button_link": "#gift-boxes-hampers",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        },
+        "text_custom": {
+          "type": "text",
+          "settings": {
+            "layout": "layout_3",
+            "layout_3_bg": "#FCF2C5",
+            "icon_image": "",
+            "icon_width": 40,
+            "title": "We finalise\nit together",
+            "subheading": "",
+            "text": "<p>We call you to confirm details and price before packing.</p>",
+            "width": "50%",
+            "alignment": "center",
+            "align_text": "left",
+            "text_size": "medium",
+            "text_color": "inherit",
+            "button_label": "Custom Now",
+            "button_link": "/pages/custom-gift-order",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "block_custom_class": "",
+            "animations": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "text_browse",
+        "text_custom"
+      ],
+      "settings": {
+        "heading": "Two ways to gift with us",
+        "heading_size": "h3",
+        "subheading": "",
+        "img_shape": "",
+        "img_on_top": false,
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "content_color_scheme": "",
+        "gap": 20,
+        "gap_mobile": 16,
+        "use_scroll_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "custom_class": "m-gifting-two-ways"
+      }
+    },
+    "gifting_usp_bar": {
+      "type": "icon-box",
+      "blocks": {
+        "usp_1": {
+          "type": "iconbox",
+          "settings": {
+            "title": "100% High Protein",
+            "description": ""
+          }
+        },
+        "usp_2": {
+          "type": "iconbox",
+          "settings": {
+            "title": "Gluten Free",
+            "description": ""
+          }
+        },
+        "usp_3": {
+          "type": "iconbox",
+          "settings": {
+            "title": "Powerful Nutrition",
+            "description": ""
+          }
+        },
+        "usp_4": {
+          "type": "iconbox",
+          "settings": {
+            "title": "No Cholesterol",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4"
+      ],
+      "settings": {
+        "container": "w-full",
+        "color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
+        "card_style": "horizontal",
+        "content_alignment": "center",
+        "enable_slider": false,
+        "use_scroll_mobile": false,
+        "use_grid_column_mb": false,
+        "hover_effect": "none",
+        "custom_class": "m-gifting-usp"
+      }
+    },
+    "gifting_product_tabs": {
+      "type": "gift-collection-tabs",
+      "blocks": {
+        "tab_all": {
+          "type": "tab",
+          "settings": {
+            "label": "All Boxes",
+            "collection": "gift-boxes-hampers"
+          }
+        },
+        "tab_festive": {
+          "type": "tab",
+          "settings": {
+            "label": "Festive Hampers",
+            "collection": ""
+          }
+        },
+        "tab_premium": {
+          "type": "tab",
+          "settings": {
+            "label": "Premium Trays",
+            "collection": ""
+          }
+        },
+        "tab_mini": {
+          "type": "tab",
+          "settings": {
+            "label": "Mini Favours",
+            "collection": ""
+          }
+        },
+        "tab_corporate": {
+          "type": "tab",
+          "settings": {
+            "label": "Corporate Sets",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_all",
+        "tab_festive",
+        "tab_premium",
+        "tab_mini",
+        "tab_corporate"
+      ],
+      "settings": {
+        "container": "container-fluid",
+        "color_scheme": "",
+        "heading": "Gift boxes & hampers",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "products_per_tab": 4,
+        "card_button_label": "Show now",
+        "animations": "inherit"
+      }
+    },
+    "gifting_whatsapp_banner": {
+      "type": "gifting-whatsapp-banner",
+      "settings": {
+        "container": "container-fluid",
+        "background": "",
+        "section_bg": "#F3E4C9",
+        "card_bg": "#B02532",
+        "show_ornament": true,
+        "heading": "Not sure\nwhat to pick?",
+        "text": "<p>Message us on WhatsApp with occasion or budget; we'll create a box.</p>",
+        "button_label": "Message us on",
+        "whatsapp_number": "+91 90810 91710",
+        "whatsapp_prefill": "",
+        "animations": "inherit"
+      }
+    },
+    "gifting_by_occasion": {
+      "type": "collection-list",
+      "blocks": {
+        "occ_1": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "title": "Weddings",
+            "item_image": "shopify://shop_images/9601f4ac992f5763e723a14268949f35438d5caa.png"
+          }
+        },
+        "occ_2": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "title": "Diwali & Festivals",
+            "item_image": "shopify://shop_images/8072a8166b497e9ede5b67f51109fd2fbcb9a18f.png"
+          }
+        },
+        "occ_3": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "title": "Corporate Gifting",
+            "item_image": "shopify://shop_images/8072a8166b497e9ede5b67f51109fd2fbcb9a18f.png"
+          }
+        },
+        "occ_4": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "title": "Housewarming",
+            "item_image": "shopify://shop_images/f7f8fe396307da869deed222d62d2f793d9392cb.png"
+          }
+        },
+        "occ_5": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "",
+            "title": "Baby Showers",
+            "item_image": "shopify://shop_images/639542d7f65c92435054c6df4d6531f8d07194c5.png"
+          }
+        }
+      },
+      "block_order": [
+        "occ_1",
+        "occ_2",
+        "occ_3",
+        "occ_4",
+        "occ_5"
+      ],
+      "settings": {
+        "heading": "Gift by occasion",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "",
+        "layout": "grid",
+        "expanded": false,
+        "card_style": "standard",
+        "text_alignment": "center",
+        "hover_effect": "scaling-down",
+        "show_product_count": false,
+        "count_inline_title": false,
+        "image_rounded": true,
+        "items_per_row": 5,
+        "item_gap": 16,
+        "enable_slider": false,
+        "mobile_disable_slider": true,
+        "use_scroll_mobile": true,
+        "mobile_gap": 12,
+        "custom_class": "m-gifting-occasion"
+      }
+    },
+    "gifting_faqs": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "faq_1": {
+          "type": "item",
+          "settings": {
+            "header": "Can I customise what goes inside a gift box?",
+            "text_size": "h5",
+            "content": "<p>Yes — use the Custom Gift Order form to tell us the occasion, budget and products you'd like, and we'll confirm the final selection with you before packing.</p>",
+            "open": false
+          }
+        },
+        "faq_2": {
+          "type": "item",
+          "settings": {
+            "header": "Do you offer branding for corporate gifts?",
+            "text_size": "h5",
+            "content": "<p>Do you offer branding for corporate gifts?We can add branded sleeves, tags and cards for bulk corporate orders mention this in the enquiry form.</p>",
+            "open": true
+          }
+        },
+        "faq_3": {
+          "type": "item",
+          "settings": {
+            "header": "How do I pay for a custom order?",
+            "text_size": "h5",
+            "content": "<p>We'll call to confirm your order details and pricing first. No payment is needed to submit an enquiry.</p>",
+            "open": false
+          }
+        },
+        "faq_4": {
+          "type": "item",
+          "settings": {
+            "header": "What's the delivery time for gift boxes?",
+            "text_size": "h5",
+            "content": "<p>Standard gift boxes ship within a few business days. Custom and bulk orders depend on quantity — we'll confirm a timeline when we get in touch.</p>",
+            "open": false
+          }
+        },
+        "faq_5": {
+          "type": "item",
+          "settings": {
+            "header": "Is there a minimum order quantity for custom gifting?",
+            "text_size": "h5",
+            "content": "<p>There's no strict minimum for custom gift boxes. For bulk and corporate orders, use the Bulk & Corporate Gifting form and we'll confirm quantities with you.</p>",
+            "open": false
+          }
+        },
+        "faq_6": {
+          "type": "item",
+          "settings": {
+            "header": "Can I include a personalised card or message?",
+            "text_size": "h5",
+            "content": "<p>Yes — mention your message in the Product Selection & Notes field on the Custom Gift Order form and we'll include it with your box.</p>",
+            "open": false
+          }
+        },
+        "faq_7": {
+          "type": "item",
+          "settings": {
+            "header": "Do you ship gift boxes outside Surat?",
+            "text_size": "h5",
+            "content": "<p>Yes, we ship gift boxes across India. Delivery timelines outside Surat may vary — we'll confirm this when we get in touch.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6",
+        "faq_7"
+      ],
+      "settings": {
+        "container": "container-narrow",
+        "color_scheme": "",
+        "image": "",
+        "image_position": "left",
+        "column_gap": 100,
+        "heading": "Gifting FAQs",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "img_shape": "",
+        "img_on_top": false,
+        "header_alignment": "center",
+        "custom_class": "m-gifting-faq"
+      }
+    },
+    "gifting_instagram": {
+      "type": "gallery",
+      "blocks": {
+        "gal_1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_3": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_4": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_5": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_6": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_7": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        },
+        "gal_8": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "https://www.instagram.com/pateldryfruit/"
+          }
+        }
+      },
+      "block_order": [
+        "gal_1",
+        "gal_2",
+        "gal_3",
+        "gal_4",
+        "gal_5",
+        "gal_6",
+        "gal_7",
+        "gal_8"
+      ],
+      "settings": {
+        "heading": "Follow Our Instagram",
+        "heading_size": "h3",
+        "subheading": "@pateldryfruit",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "container": "container-full",
+        "color_scheme": "",
+        "color_scheme_content": "",
+        "icon": "none",
+        "layout": "grid",
+        "grid_columns": 8,
+        "column_gap": 6,
+        "row_gap": 0,
+        "columns_mobile": "2",
+        "mobile_gap": 6,
+        "use_scroll_mobile": false,
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "custom_class": "m-gifting-instagram",
+        "animations": "inherit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gifting_hero",
+    "gifting_two_ways",
+    "gifting_usp_bar",
+    "gifting_product_tabs",
+    "gifting_whatsapp_banner",
+    "gifting_by_occasion",
+    "gifting_faqs",
+    "gifting_instagram"
+  ]
+}

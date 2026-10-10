@@ -1,0 +1,133 @@
+{{ 'gifting-whatsapp-banner.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign animation_effect = settings.animations
+  assign animated = false
+  if animation_effect != 'none'
+    assign animated = true
+  endif
+
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+
+  assign whatsapp_number = section.settings.whatsapp_number | remove: ' ' | remove: '+' | remove: '-'
+  assign whatsapp_link = 'https://wa.me/' | append: whatsapp_number
+  if section.settings.whatsapp_prefill != blank
+    assign whatsapp_link = whatsapp_link | append: '?text=' | append: section.settings.whatsapp_prefill | url_encode
+  endif
+-%}
+
+<section
+  class="m-section m-gwb"
+  data-section-id="{{ section.id }}"
+  data-section-type="gifting-whatsapp-banner"
+  style="--gwb-card-bg: {{ section.settings.card_bg }}; --gwb-section-bg: {{ section.settings.section_bg }};"
+>
+  <div class="{{ container }} m-section-my">
+    <div class="m-gwb__wrapper{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+      {%- if section.settings.background_video != blank -%}
+        <div class="m-gwb__bg">
+          {{-
+            section.settings.background_video
+            | video_tag:
+              image_size: '1500x',
+              autoplay: true,
+              loop: true,
+              controls: false,
+              muted: true,
+              playsinline: true,
+              class: 'm-gwb__bg-video'
+          -}}
+        </div>
+      {%- elsif section.settings.background != blank -%}
+        <div class="m-gwb__bg">
+          {{
+            section.settings.background
+            | image_url: width: 2000
+            | image_tag: loading: 'lazy', sizes: '100vw', class: 'm-gwb__bg-img'
+          }}
+        </div>
+      {%- endif -%}
+
+      <div class="m-gwb__card">
+        {%- if section.settings.show_ornament -%}
+          <div class="m-gwb__ornament" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h2 class="m-gwb__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <p class="m-gwb__text">{{ section.settings.text }}</p>
+        {%- endif -%}
+
+        {%- if whatsapp_number != blank -%}
+          <a href="{{ whatsapp_link }}" class="m-gwb__button" target="_blank" rel="noopener">
+            <svg class="m-gwb__wa-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.82 12.04 21.82C17.5 21.82 21.95 17.37 21.95 11.91C21.95 9.27 20.92 6.79 19.05 4.92C17.18 3.05 14.68 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.84 19.01L7.54 18.83L4.42 19.65L5.26 16.61L5.06 16.3C4.23 15 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.29 9.71 20.28 11.91C20.28 16.46 16.58 20.15 12.04 20.15ZM16.56 13.97C16.31 13.85 15.11 13.26 14.89 13.17C14.66 13.09 14.5 13.05 14.34 13.29C14.17 13.54 13.71 14.08 13.57 14.24C13.43 14.41 13.29 14.43 13.05 14.31C12.8 14.18 12.01 13.92 11.08 13.09C10.35 12.44 9.86 11.64 9.72 11.39C9.58 11.15 9.7 11.01 9.82 10.89C9.93 10.78 10.07 10.59 10.2 10.45C10.32 10.31 10.36 10.2 10.45 10.04C10.53 9.87 10.49 9.73 10.43 9.61C10.36 9.49 9.87 8.29 9.67 7.79C9.47 7.31 9.26 7.37 9.11 7.37C8.96 7.36 8.8 7.36 8.63 7.36C8.47 7.36 8.2 7.42 7.98 7.66C7.75 7.9 7.13 8.49 7.13 9.69C7.13 10.89 8 12.05 8.12 12.21C8.24 12.37 9.86 14.87 12.35 15.93C12.94 16.18 13.4 16.33 13.76 16.44C14.35 16.63 14.89 16.6 15.32 16.54C15.8 16.47 16.79 15.94 17 15.35C17.2 14.76 17.2 14.26 17.14 14.15C17.08 14.05 16.91 13.98 16.66 13.86" fill="currentColor"/>
+            </svg>
+            <span class="m-gwb__button-label">{{ section.settings.button_label | default: 'Message us on' }}</span>
+            <span class="m-gwb__button-divider"></span>
+            <span class="m-gwb__button-number">{{ section.settings.whatsapp_number }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gifting WhatsApp banner",
+  "class": "m-shopify-section-gifting-whatsapp-banner",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container-fluid",
+      "options": [
+        { "value": "container-fluid", "label": "Default" },
+        { "value": "w-full", "label": "Full width" },
+        { "value": "container", "label": "Use container box" }
+      ]
+    },
+{ "type": "image_picker", "id": "background", "label": "Background image (shown if no video is set)" },
+{ "type": "video", "id": "background_video", "label": "Background video (overrides image, autoplay/loop)" },    { "type": "color", "id": "section_bg", "label": "Background fallback color", "default": "#F3E4C9" },
+    { "type": "color", "id": "card_bg", "label": "Card background color", "default": "#B02532" },
+    { "type": "checkbox", "id": "show_ornament", "label": "Show small divider ornament", "default": true },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Not sure what to pick?" },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Message us on WhatsApp with occasion or budget; we'll create a box."
+    },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Message us on" },
+    { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number (with country code)", "default": "+91 90810 91710" },
+    { "type": "text", "id": "whatsapp_prefill", "label": "Pre-filled WhatsApp message (optional)" },
+    {
+      "type": "select",
+      "id": "animations",
+      "label": "Animations",
+      "default": "inherit",
+      "options": [
+        { "value": "inherit", "label": "Inherit" },
+        { "value": "none", "label": "None" },
+        { "value": "fade-in", "label": "Fade in" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Gifting WhatsApp banner" }
+  ]
+}
+{% endschema %}
