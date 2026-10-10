@@ -1,0 +1,210 @@
+{{ 'gift-forms.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign animation_effect = settings.animations
+  assign animated = false
+  if animation_effect != 'none'
+    assign animated = true
+  endif
+
+  assign container = section.settings.container
+  if container == 'w-full'
+    assign container = 'container-full'
+  endif
+
+  assign occasion_options = section.settings.occasion_options | newline_to_br | split: '<br />'
+-%}
+
+<section
+  class="m-section m-gift-form-page{% if section.settings.header_bg != blank %} m-gift-form-page--custom-bg{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="custom-order-form"
+  {% if section.settings.header_bg != blank %}style="--gift-form-header-bg: {{ section.settings.header_bg }};"{% endif %}
+>
+  <div class="m-gift-form-page__header{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+    <div class="{{ container }}">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="m-gift-form-page__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="m-gift-form-page__heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <p class="m-gift-form-page__description">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="{{ container }} m-section-my">
+    <div class="m-gift-form-card m:flex m:flex-wrap{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+      <div class="m-gift-form-card__media m:w-full lg:m:w-5/12">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 900
+            | image_tag: loading: 'lazy', class: 'm-gift-form-card__img', sizes: '(min-width: 1024px) 41vw, 100vw'
+          }}
+        {%- endif -%}
+      </div>
+
+      <div class="m-gift-form-card__form m:w-full lg:m:w-7/12">
+        {%- form 'contact', id: 'CustomGiftOrderForm', class: 'm-gift-form' -%}
+          {%- capture success_message -%}{{ 'contact.form.post_success' | t }}{%- endcapture -%}
+          {%- render 'form__success', form: form, success_message: success_message -%}
+          {%- render 'form__error', form: form -%}
+
+          <input type="hidden" name="contact[Form Type]" value="Custom Gift Order">
+
+          <div class="m-gift-form__row m:flex m:flex-wrap">
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <input
+                type="text"
+                class="form-field form-field--input"
+                name="contact[Full Name]"
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                placeholder="{{ section.settings.name_label | default: 'Enter your Full name' }}"
+                required
+              >
+            </div>
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <input
+                type="tel"
+                class="form-field form-field--input"
+                name="contact[Phone Number]"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                placeholder="{{ section.settings.phone_label | default: 'Enter your number' }}"
+                required
+              >
+            </div>
+
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <select class="form-field form-field--input" name="contact[Occasion]">
+                <option value="">{{ section.settings.occasion_label | default: 'Occasion' }}</option>
+                {%- for option in occasion_options -%}
+                  {%- assign option = option | strip -%}
+                  {%- if option != blank -%}
+                    <option value="{{ option }}">{{ option }}</option>
+                  {%- endif -%}
+                {%- endfor -%}
+              </select>
+            </div>
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <input
+                type="text"
+                class="form-field form-field--input"
+                name="contact[Quantity Needed]"
+                placeholder="{{ section.settings.quantity_label | default: 'Quantity Needed' }}"
+              >
+            </div>
+
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <input
+                type="text"
+                class="form-field form-field--input"
+                name="contact[Budget per Box]"
+                placeholder="{{ section.settings.budget_label | default: 'Budget per Box' }}"
+              >
+            </div>
+            <div class="m-gift-form__field m:column m:w-full md:m:w-1/2">
+              <input
+                type="text"
+                class="form-field form-field--input"
+                name="contact[Packaging Preference]"
+                placeholder="{{ section.settings.packaging_label | default: 'Packaging Preference' }}"
+              >
+            </div>
+
+            <div class="m-gift-form__field m:column m:w-full">
+              <textarea
+                class="form-field form-field--input"
+                name="contact[body]"
+                rows="4"
+                placeholder="{{ section.settings.notes_label | default: 'Product Selection & Notes' }}"
+              >{%- if form.body -%}{{ form.body }}{%- endif -%}</textarea>
+            </div>
+          </div>
+
+          <div class="m-gift-form__footer m:flex m:flex-wrap">
+            <button type="submit" class="m-button m-button--primary">
+              {{ section.settings.submit_label | default: 'Submit Enquiry' }}
+            </button>
+            {%- if section.settings.helper_text != blank -%}
+              <p class="m-gift-form__helper">{{ section.settings.helper_text }}</p>
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom order form",
+  "class": "m-shopify-section-custom-order-form",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "container",
+      "label": "Container type",
+      "default": "container-fluid",
+      "options": [
+        { "value": "container-fluid", "label": "Default" },
+        { "value": "w-full", "label": "Full width" },
+        { "value": "container", "label": "Use container box" }
+      ]
+    },
+    { "type": "header", "content": "Header banner" },
+    { "type": "color", "id": "header_bg", "label": "Header background color", "default": "#FBEEC7" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Custom Gift Order" },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Subtext",
+      "default": "Building a gift box? Share details; we'll confirm before packing."
+    },
+    { "type": "header", "content": "Form" },
+    { "type": "image_picker", "id": "image", "label": "Side image" },
+    { "type": "text", "id": "name_label", "label": "Full name placeholder", "default": "Enter your Full name" },
+    { "type": "text", "id": "phone_label", "label": "Phone placeholder", "default": "Enter your number" },
+    { "type": "text", "id": "occasion_label", "label": "Occasion placeholder", "default": "Occasion" },
+    {
+      "type": "textarea",
+      "id": "occasion_options",
+      "label": "Occasion options (one per line)",
+      "default": "Wedding\nDiwali & Festivals\nCorporate Gifting\nHousewarming\nBaby Shower\nOther"
+    },
+    { "type": "text", "id": "quantity_label", "label": "Quantity placeholder", "default": "Quantity Needed" },
+    { "type": "text", "id": "budget_label", "label": "Budget placeholder", "default": "Budget per Box" },
+    { "type": "text", "id": "packaging_label", "label": "Packaging placeholder", "default": "Packaging Preference" },
+    { "type": "text", "id": "notes_label", "label": "Notes placeholder", "default": "Product Selection & Notes" },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Submit Enquiry" },
+    {
+      "type": "text",
+      "id": "helper_text",
+      "label": "Helper text",
+      "default": "We'll reach out within a few hours to finalise pricing — no payment needed to submit."
+    },
+    {
+      "type": "select",
+      "id": "animations",
+      "label": "Animations",
+      "default": "inherit",
+      "options": [
+        { "value": "inherit", "label": "Inherit" },
+        { "value": "none", "label": "None" },
+        { "value": "fade-in", "label": "Fade in" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom order form"
+    }
+  ]
+}
+{% endschema %}

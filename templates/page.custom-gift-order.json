@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_order_form": {
+      "type": "custom-order-form",
+      "settings": {
+        "container": "container-fluid",
+        "header_bg": "#FBEEC7",
+        "eyebrow": "",
+        "heading": "Custom Gift Order",
+        "description": "Building a gift box? Share details; we'll confirm before packing.",
+        "image": "",
+        "name_label": "Enter your Full name",
+        "phone_label": "Enter your number",
+        "occasion_label": "Occasion",
+        "occasion_options": "Wedding\nDiwali & Festivals\nCorporate Gifting\nHousewarming\nBaby Shower\nOther",
+        "quantity_label": "Quantity Needed",
+        "budget_label": "Budget per Box",
+        "packaging_label": "Packaging Preference",
+        "notes_label": "Product Selection & Notes",
+        "submit_label": "Submit Enquiry",
+        "helper_text": "We'll reach out within a few hours to finalise pricing — no payment needed to submit.",
+        "animations": "inherit"
+      }
+    },
+    "custom_order_instagram": {
+      "type": "gallery",
+      "blocks": {
+        "gal_1": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_2": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_3": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_4": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_5": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_6": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_7": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } },
+        "gal_8": { "type": "image", "settings": { "image": "", "link": "https://www.instagram.com/pateldryfruit/" } }
+      },
+      "block_order": ["gal_1", "gal_2", "gal_3", "gal_4", "gal_5", "gal_6", "gal_7", "gal_8"],
+      "settings": {
+        "heading": "Follow Our Instagram",
+        "heading_size": "h3",
+        "subheading": "@pateldryfruit",
+        "description": "",
+        "button_label": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": ["main", "custom_order_form", "custom_order_instagram"]
+}
