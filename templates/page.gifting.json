@@ -382,15 +382,30 @@
       "type": "gifting-whatsapp-banner",
       "settings": {
         "container": "container-fluid",
+        "background_video": "shopify://files/videos/From_Klickpin.com-_Wise_gratitude_lines_today_that_feel_fresh_and_shareable_for_simple_inner_peace-pin-id-893612751125521654.mp4",
         "section_bg": "#f3e4c9",
         "card_bg": "#b02532",
         "show_ornament": true,
-        "heading": "Not sure\nwhat to pick?",
+        "heading": "Not sure what to pick?",
         "text": "<p>Message us on WhatsApp with occasion or budget; we'll create a box.</p>",
         "button_label": "Message us on",
         "whatsapp_number": "+91 90810 91710",
         "whatsapp_prefill": "",
         "animations": "inherit"
+      }
+    },
+    "gift_enquiry_form_FxVMn8": {
+      "type": "gift-enquiry-form",
+      "name": "Gift enquiry form",
+      "settings": {
+        "heading": "Send us your Enquiry",
+        "subheading": "Tell us what you need and our team will get back to you shortly.",
+        "gifting_types": "Personal gifting\nCorporate gifting\nWedding favours\nFestive gifting",
+        "product_collection": "",
+        "extra_option": "Not sure yet / Custom box",
+        "note": "Dedicated account manager assigned for orders above 100 units.",
+        "button_label": "Get Bulk or Custom Quote",
+        "success_message": "Thank you! Our team will get back to you shortly."
       }
     },
     "gifting_faqs": {
@@ -581,19 +596,6 @@
         "custom_class": "m-gifting-instagram",
         "animations": "inherit"
       }
-    },
-    "gift_enquiry_form_FxVMn8": {
-      "type": "gift-enquiry-form",
-      "name": "Gift enquiry form",
-      "settings": {
-        "heading": "Send us your Enquiry",
-        "subheading": "Tell us what you need and our team will get back to you shortly.",
-        "gifting_types": "Personal gifting\nCorporate gifting\nWedding favours\nFestive gifting",
-        "products": "Gift boxes\nFestive hampers\nPremium trays\nMini favours\nCorporate sets\nNot sure yet",
-        "note": "Dedicated account manager assigned for orders above 100 units.",
-        "button_label": "Get Bulk or Custom Quote",
-        "success_message": "Thank you! Our team will get back to you shortly."
-      }
     }
   },
   "order": [
@@ -604,8 +606,8 @@
     "gifting_product_tabs",
     "gifting_two_ways",
     "gifting_whatsapp_banner",
+    "gift_enquiry_form_FxVMn8",
     "gifting_faqs",
-    "gifting_instagram",
-    "gift_enquiry_form_FxVMn8"
+    "gifting_instagram"
   ]
 }
