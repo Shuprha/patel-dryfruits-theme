@@ -255,79 +255,6 @@
         "text_color": "#ffffff"
       }
     },
-    "gifting_two_ways": {
-      "type": "custom-content",
-      "blocks": {
-        "text_browse": {
-          "type": "text",
-          "settings": {
-            "layout": "layout_3",
-            "layout_3_bg": "#fcf2c5",
-            "icon_width": 40,
-            "title": "Browse\nthe catalogue",
-            "subheading": "",
-            "text": "<p>Explore our gift boxes and hampers, ready to order.</p>",
-            "width": "50%",
-            "alignment": "center",
-            "align_text": "left",
-            "text_size": "medium",
-            "text_color": "inherit",
-            "button_label": "Browse Now",
-            "button_link": "#gift-boxes-hampers",
-            "button_style": "m-button--primary",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        },
-        "text_custom": {
-          "type": "text",
-          "settings": {
-            "layout": "layout_3",
-            "layout_3_bg": "#fcf2c5",
-            "icon_width": 40,
-            "title": "We finalise\nit together",
-            "subheading": "",
-            "text": "<p>We call you to confirm details and price before packing.</p>",
-            "width": "50%",
-            "alignment": "center",
-            "align_text": "left",
-            "text_size": "medium",
-            "text_color": "inherit",
-            "button_label": "Custom Now",
-            "button_link": "/pages/custom-gift-order",
-            "button_style": "m-button--primary",
-            "button_size": "",
-            "block_custom_class": "",
-            "animations": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "text_browse",
-        "text_custom"
-      ],
-      "settings": {
-        "heading": "Two ways to gift with us",
-        "heading_size": "h3",
-        "subheading": "",
-        "img_on_top": false,
-        "description": "",
-        "header_alignment": "center",
-        "container": "container-fluid",
-        "color_scheme": "",
-        "content_color_scheme": "",
-        "enable_parallax": false,
-        "parallax_direction": "vertical",
-        "gap": 20,
-        "gap_mobile": 16,
-        "use_scroll_mobile": false,
-        "padding_top": 40,
-        "padding_bottom": 20,
-        "enable_preload_image": false,
-        "custom_class": "m-gifting-two-ways"
-      }
-    },
     "gifting_whatsapp_banner": {
       "type": "gifting-whatsapp-banner",
       "settings": {
@@ -562,7 +489,6 @@
     "gifting_by_occasion",
     "gifting_product_tabs",
     "gift_usp_strip_dQeHzY",
-    "gifting_two_ways",
     "gifting_whatsapp_banner",
     "gift_enquiry_form_FxVMn8",
     "gifting_faqs",
