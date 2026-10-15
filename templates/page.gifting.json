@@ -158,7 +158,7 @@
         "usp_1": {
           "type": "iconbox",
           "settings": {
-            "card_color_scheme": "",
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
             "image_by_url": "",
             "title": "100% High Protein",
             "description": "",
@@ -172,7 +172,7 @@
         "usp_2": {
           "type": "iconbox",
           "settings": {
-            "card_color_scheme": "",
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
             "image_by_url": "",
             "title": "Gluten Free",
             "description": "",
@@ -186,7 +186,7 @@
         "usp_3": {
           "type": "iconbox",
           "settings": {
-            "card_color_scheme": "",
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
             "image_by_url": "",
             "title": "Powerful Nutrition",
             "description": "",
@@ -200,7 +200,7 @@
         "usp_4": {
           "type": "iconbox",
           "settings": {
-            "card_color_scheme": "",
+            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
             "image_by_url": "",
             "title": "No Cholesterol",
             "description": "",
