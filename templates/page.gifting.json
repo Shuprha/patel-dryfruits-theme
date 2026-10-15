@@ -152,6 +152,50 @@
         "animations": "inherit"
       }
     },
+    "gift_usp_strip_dQeHzY": {
+      "type": "gift-usp-strip",
+      "blocks": {
+        "item_Dz9GqD": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector.png",
+            "text": "100% High Protein"
+          }
+        },
+        "item_6BWiaA": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector2.png",
+            "text": "Gluten Free"
+          }
+        },
+        "item_UEe8VQ": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector3.png",
+            "text": "Powerful Nutrition"
+          }
+        },
+        "item_BDUKhN": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector1.png",
+            "text": "No Cholesterol"
+          }
+        }
+      },
+      "block_order": [
+        "item_Dz9GqD",
+        "item_6BWiaA",
+        "item_UEe8VQ",
+        "item_BDUKhN"
+      ],
+      "name": "USP strip",
+      "settings": {
+        "bg_color": "#b3202f",
+        "text_color": "#ffffff"
+      }
+    },
     "gifting_product_tabs": {
       "type": "gift-collection-tabs",
       "blocks": {
@@ -209,50 +253,6 @@
         "products_per_tab": 4,
         "card_button_label": "Show now",
         "animations": "inherit"
-      }
-    },
-    "gift_usp_strip_dQeHzY": {
-      "type": "gift-usp-strip",
-      "blocks": {
-        "item_Dz9GqD": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Vector.png",
-            "text": "100% High Protein"
-          }
-        },
-        "item_6BWiaA": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Vector2.png",
-            "text": "Gluten Free"
-          }
-        },
-        "item_UEe8VQ": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Vector3.png",
-            "text": "Powerful Nutrition"
-          }
-        },
-        "item_BDUKhN": {
-          "type": "item",
-          "settings": {
-            "icon": "shopify://shop_images/Vector1.png",
-            "text": "No Cholesterol"
-          }
-        }
-      },
-      "block_order": [
-        "item_Dz9GqD",
-        "item_6BWiaA",
-        "item_UEe8VQ",
-        "item_BDUKhN"
-      ],
-      "name": "USP strip",
-      "settings": {
-        "bg_color": "#b3202f",
-        "text_color": "#ffffff"
       }
     },
     "gifting_whatsapp_banner": {
@@ -552,8 +552,8 @@
     "main",
     "gifting_hero",
     "gifting_by_occasion",
-    "gifting_product_tabs",
     "gift_usp_strip_dQeHzY",
+    "gifting_product_tabs",
     "gifting_whatsapp_banner",
     "gift_enquiry_form_FxVMn8",
     "testimonials_HEgqPT",
