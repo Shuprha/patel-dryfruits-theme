@@ -222,6 +222,32 @@ select.form-field.form-field--input {
 
 
 /* ===== Gifting Instagram marquee ===== */
+.m-gifting-instagram .m-gallery__item {
+  flex: 0 0 auto;
+  width: 160px;
+  margin-right: 6px;
+}
+
+/* square frame, rounded corners */
+.m-gifting-instagram .m-gallery__media {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.m-gifting-instagram .m-gallery__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media screen and (max-width: 749px) {
+  .m-gifting-instagram .m-gallery__item {
+    width: 110px;
+    margin-right: 4px;
+  }
+}
 
 .m-gifting-instagram .m-gallery {
   overflow: hidden;
