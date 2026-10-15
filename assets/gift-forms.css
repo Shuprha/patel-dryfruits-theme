@@ -237,11 +237,6 @@ select.form-field.form-field--input {
   animation: m-gifting-marquee 40s linear infinite;
 }
 
-.m-gifting-instagram .m-gallery__item {
-  flex: 0 0 auto;
-  width: 220px;
-  margin-right: 12px;
-}
 
 .m-gifting-instagram .m-gallery__wrapper:hover {
   animation-play-state: paused;
@@ -258,8 +253,3 @@ select.form-field.form-field--input {
   }
 }
 
-@media screen and (max-width: 749px) {
-  .m-gifting-instagram .m-gallery__item {
-    width: 150px;
-  }
-}
