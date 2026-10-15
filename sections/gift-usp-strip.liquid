@@ -1,0 +1,72 @@
+{{ 'gift-forms.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="m-usp-strip"
+  data-section-id="{{ section.id }}"
+  style="--usp-bg: {{ section.settings.bg_color }}; --usp-text: {{ section.settings.text_color }};"
+>
+  <div class="m-usp-strip__inner">
+    {%- for block in section.blocks -%}
+      <div class="m-usp-strip__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.icon != blank -%}
+          <span class="m-usp-strip__icon">
+            {{ block.settings.icon | image_url: width: 80 | image_tag: loading: 'lazy', alt: block.settings.text }}
+          </span>
+        {%- endif -%}
+        <span class="m-usp-strip__text">{{ block.settings.text }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "USP strip",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#b3202f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Small white PNG or SVG works best."
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Custom branding"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "USP strip",
+      "blocks": [
+        { "type": "item", "settings": { "text": "Custom branding" } },
+        { "type": "item", "settings": { "text": "Pan-India delivery" } },
+        { "type": "item", "settings": { "text": "FSSAI certified" } },
+        { "type": "item", "settings": { "text": "Bulk orders 100+" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

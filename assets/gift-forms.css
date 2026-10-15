@@ -1,3 +1,9 @@
+/* =========================================================
+   GIFT FORMS + GIFTING PAGE STYLES
+   ========================================================= */
+
+/* ===== Base: gift form page (Custom Gift Order) ===== */
+
 .m-gift-form-page {
   --gift-form-header-bg: #fbeec7;
 }
@@ -94,8 +100,82 @@ select.form-field.form-field--input {
 }
 
 
+/* ===== Bulk & Corporate Gifting: image + form as two boxes ===== */
 
-/* ===== Gift enquiry form ===== */
+[data-section-type="bulk-enquiry-form"] .m-gift-form-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 16px;
+  align-items: stretch;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form-card__media {
+  position: relative;
+  min-height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form-card__form {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 16px;
+  padding: 24px 28px;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form .m-gift-form__field .form-field {
+  background: #f3f3f3;
+  border: 0;
+  border-radius: 6px;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form__footer {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+[data-section-type="bulk-enquiry-form"] .m-gift-form__helper {
+  flex: 0 1 auto;
+  max-width: 220px;
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 1024px) {
+  [data-section-type="bulk-enquiry-form"] .m-gift-form-card {
+    flex-wrap: nowrap;
+  }
+
+  [data-section-type="bulk-enquiry-form"] .m-gift-form-card__media {
+    flex: 0 0 calc(50% - 8px);
+    width: calc(50% - 8px);
+  }
+
+  [data-section-type="bulk-enquiry-form"] .m-gift-form-card__form {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+
+/* ===== Gift enquiry form (sections/gift-enquiry-form.liquid) ===== */
 
 .m-gift-enquiry {
   --enq-red: #b3202f;
@@ -221,7 +301,119 @@ select.form-field.form-field--input {
 }
 
 
-/* ===== Gifting Instagram marquee ===== */
+/* ===== Gifting testimonials (custom class: m-gifting-testimonials) ===== */
+
+.m-gifting-testimonials {
+  --t-gold: #c4b35a;
+  --t-red: #b3202f;
+}
+
+/* force full opacity (theme dims cards) */
+.m-gifting-testimonials .swiper-slide,
+.m-gifting-testimonials .m-testimonial,
+.m-gifting-testimonials .m-testimonial__wrapper {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* stop scroll-in animation on the card only, not the slider */
+.m-gifting-testimonials .m-testimonial {
+  transform: none !important;
+  animation: none !important;
+}
+
+.m-gifting-testimonials .swiper-slide {
+  height: auto;
+}
+
+.m-gifting-testimonials .m-testimonial,
+.m-gifting-testimonials .m-testimonial__wrapper {
+  height: 100%;
+}
+
+/* card */
+.m-gifting-testimonials .m-testimonial__wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #f1dde2;
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: left;
+}
+
+/* gold quote mark */
+.m-gifting-testimonials .m-testimonial__wrapper::before {
+  content: "\201C";
+  order: 0;
+  font-family: Georgia, serif;
+  font-size: 72px;
+  line-height: 0.8;
+  height: 40px;
+  color: var(--t-gold);
+  margin-bottom: 16px;
+}
+
+/* hide per-card title */
+.m-gifting-testimonials .m-testimonial__title {
+  display: none;
+}
+
+/* quote text */
+.m-gifting-testimonials .m-testimonial__description {
+  order: 1;
+  flex: 1;
+}
+
+.m-gifting-testimonials .m-testimonial__description p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* stars below quote */
+.m-gifting-testimonials .m-stars {
+  order: 2;
+  margin: 24px 0 12px;
+}
+
+/* author */
+.m-gifting-testimonials .m-testimonial__name {
+  order: 3;
+}
+
+.m-gifting-testimonials .m-testimonial__name p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+
+/* ===== Gifting Instagram marquee (custom class: m-gifting-instagram) ===== */
+
+.m-gifting-instagram .m-gallery {
+  overflow: hidden;
+}
+
+.m-gifting-instagram .m-gallery__wrapper {
+  display: flex !important;
+  grid-template-columns: none !important;
+  flex-wrap: nowrap;
+  gap: 0 !important;
+  width: max-content;
+  overflow: visible !important;
+  animation: m-gifting-marquee 40s linear infinite;
+}
+
+.m-gifting-instagram .m-gallery__wrapper:hover {
+  animation-play-state: paused;
+}
+
 .m-gifting-instagram .m-gallery__item {
   flex: 0 0 auto;
   width: 140px;
@@ -242,35 +434,16 @@ select.form-field.form-field--input {
   display: block;
 }
 
+@keyframes m-gifting-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @media screen and (max-width: 749px) {
   .m-gifting-instagram .m-gallery__item {
     width: 110px;
     margin-right: 4px;
   }
-}
-
-.m-gifting-instagram .m-gallery {
-  overflow: hidden;
-}
-
-.m-gifting-instagram .m-gallery__wrapper {
-  display: flex !important;
-  grid-template-columns: none !important;
-  flex-wrap: nowrap;
-  gap: 0 !important;
-  width: max-content;
-  overflow: visible !important;
-  animation: m-gifting-marquee 40s linear infinite;
-}
-
-
-.m-gifting-instagram .m-gallery__wrapper:hover {
-  animation-play-state: paused;
-}
-
-@keyframes m-gifting-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -280,30 +453,62 @@ select.form-field.form-field--input {
 }
 
 
+/* ===== USP strip (sections/gift-usp-strip.liquid) ===== */
 
-
-/* ===== Gifting USP strip ===== */
-
-.m-gifting-usp {
-  --usp-icon: 28px;
+.m-usp-strip {
+  background: var(--usp-bg, #b3202f);
+  color: var(--usp-text, #fff);
+  padding: 12px 16px;
 }
 
-/* small icons */
-.m-gifting-usp img,
-.m-gifting-usp svg {
-  width: var(--usp-icon) !important;
-  height: var(--usp-icon) !important;
-  max-width: none;
-  flex-shrink: 0;
+.m-usp-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* compact one-line labels */
-.m-gifting-usp h2,
-.m-gifting-usp h3,
-.m-gifting-usp h4 {
-  margin: 0;
+.m-usp-strip__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1 1 0;
+  padding: 4px 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.m-usp-strip__item:first-child {
+  border-left: 0;
+}
+
+.m-usp-strip__icon img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.m-usp-strip__text {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.2;
-  color: #fff;
+  color: var(--usp-text, #fff);
+}
+
+@media screen and (max-width: 749px) {
+  .m-usp-strip__inner {
+    flex-wrap: wrap;
+  }
+
+  .m-usp-strip__item {
+    flex: 0 0 50%;
+    padding: 8px 6px;
+    border-left: 0;
+  }
+
+  .m-usp-strip__text {
+    font-size: 12px;
+  }
 }
