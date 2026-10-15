@@ -279,3 +279,31 @@ select.form-field.form-field--input {
   }
 }
 
+
+
+
+/* ===== Gifting USP strip ===== */
+
+.m-gifting-usp {
+  --usp-icon: 28px;
+}
+
+/* small icons */
+.m-gifting-usp img,
+.m-gifting-usp svg {
+  width: var(--usp-icon) !important;
+  height: var(--usp-icon) !important;
+  max-width: none;
+  flex-shrink: 0;
+}
+
+/* compact one-line labels */
+.m-gifting-usp h2,
+.m-gifting-usp h3,
+.m-gifting-usp h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
