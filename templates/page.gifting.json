@@ -285,6 +285,71 @@
         "success_message": "Thank you! Our team will get back to you shortly."
       }
     },
+    "testimonials_HEgqPT": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_xTGHCG": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
+            "footer": "<p>Dean D. US</p>",
+            "image_text": "",
+            "image_link": "",
+            "product": ""
+          }
+        },
+        "testimonial_iQ6EwB": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
+            "footer": "<p>Dean D. US</p>",
+            "image_text": "",
+            "image_link": "",
+            "product": ""
+          }
+        },
+        "testimonial_YXDHXn": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Love it so much",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
+            "footer": "<p>Dean D. US</p>",
+            "image_text": "",
+            "image_link": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_xTGHCG",
+        "testimonial_iQ6EwB",
+        "testimonial_YXDHXn"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "heading": "What People Are Saying",
+        "heading_size": "h3",
+        "subheading": "",
+        "img_on_top": false,
+        "description": "",
+        "header_alignment": "center",
+        "container": "w-full",
+        "color_scheme": "",
+        "design": "testimonials-1",
+        "show_stars": true,
+        "autorotate": false,
+        "show_navigation": false,
+        "show_pagination": true,
+        "star_color": "#000",
+        "item_color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
     "gifting_faqs": {
       "type": "collapsible-tabs",
       "blocks": {
@@ -491,6 +556,7 @@
     "gift_usp_strip_dQeHzY",
     "gifting_whatsapp_banner",
     "gift_enquiry_form_FxVMn8",
+    "testimonials_HEgqPT",
     "gifting_faqs",
     "gifting_instagram"
   ]
