@@ -291,9 +291,9 @@
         "testimonial_xTGHCG": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
-            "footer": "<p>Dean D. US</p>",
+            "title": "",
+            "description": "<p>\"Absolutely loved the freshness! The laddoos tasted just like the ones my grandmother used to make. Pure nostalgia in every bite.\"</p>",
+            "footer": "<p>ANJALI M.</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -302,9 +302,9 @@
         "testimonial_iQ6EwB": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
-            "footer": "<p>Dean D. US</p>",
+            "title": "",
+            "description": "<p>\"Beautifully packed and perfect for gifting. I ordered for Diwali and everyone in my family couldn’t stop praising the taste.\"</p>",
+            "footer": "<p>ROHIT K.</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -313,9 +313,9 @@
         "testimonial_YXDHXn": {
           "type": "testimonial",
           "settings": {
-            "title": "Love it so much",
-            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
-            "footer": "<p>Dean D. US</p>",
+            "title": "",
+            "description": "<p><br/>\"Finally, a brand that delivers authentic mithai without compromising on quality. The kaju katli was melt-in-the-mouth delicious!\"<br/><br/></p>",
+            "footer": "<p>KAJAL V.</p>",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -346,7 +346,7 @@
         "item_color_scheme": "",
         "padding_top": 50,
         "padding_bottom": 50,
-        "custom_class": "",
+        "custom_class": "m-gifting-testimonials",
         "animations": "inherit"
       }
     },
