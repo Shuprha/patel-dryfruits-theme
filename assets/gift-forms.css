@@ -224,7 +224,7 @@ select.form-field.form-field--input {
 /* ===== Gifting Instagram marquee ===== */
 .m-gifting-instagram .m-gallery__item {
   flex: 0 0 auto;
-  width: 160px;
+  width: 140px;
   margin-right: 6px;
 }
 
