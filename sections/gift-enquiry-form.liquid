@@ -3,7 +3,10 @@
 {%- liquid
   assign form_id = 'GiftEnquiry-' | append: section.id
   assign type_list = section.settings.gifting_types | newline_to_br | strip_newlines | split: '<br />'
-  assign product_list = section.settings.products | newline_to_br | strip_newlines | split: '<br />'
+  assign product_collection = section.settings.product_collection
+  if product_collection == blank
+    assign product_collection = collections['all']
+  endif
 -%}
 
 <section
@@ -73,15 +76,15 @@
 
         <div class="m-gift-enquiry__field">
           <label for="{{ form_id }}-product">Product</label>
-          <select id="{{ form_id }}-product" name="contact[Product]">
-            <option value="" disabled selected>Select a product</option>
-            {%- for item in product_list -%}
-              {%- assign opt = item | strip -%}
-              {%- if opt != blank -%}
-                <option value="{{ opt | escape }}">{{ opt }}</option>
-              {%- endif -%}
-            {%- endfor -%}
-          </select>
+            <select id="{{ form_id }}-product" name="contact[Product]">
+                <option value="" disabled selected>Select a product</option>
+                {%- if section.settings.extra_option != blank -%}
+                    <option value="{{ section.settings.extra_option | escape }}">{{ section.settings.extra_option }}</option>
+                {%- endif -%}
+                {%- for product in product_collection.products limit: 50 -%}
+                    <option value="{{ product.title | escape }}">{{ product.title }}</option>
+                {%- endfor -%}
+            </select>
         </div>
 
         <div class="m-gift-enquiry__field">
@@ -128,11 +131,16 @@
       "default": "Personal gifting\nCorporate gifting\nWedding favours\nFestive gifting"
     },
     {
-      "type": "textarea",
-      "id": "products",
-      "label": "Product options",
-      "info": "One option per line.",
-      "default": "Gift boxes\nFestive hampers\nPremium trays\nMini favours\nCorporate sets\nNot sure yet"
+      "type": "collection",
+      "id": "product_collection",
+      "label": "Product collection",
+      "info": "Products from this collection appear in the dropdown. Leave empty to list all products (up to 50)."
+    },
+    {
+      "type": "text",
+      "id": "extra_option",
+      "label": "Extra option at top",
+      "default": "Not sure yet / Custom box"
     },
     {
       "type": "text",
