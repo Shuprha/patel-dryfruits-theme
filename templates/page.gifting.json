@@ -519,48 +519,56 @@
         "gal_1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/e8272ee8112c528518f124a3634b4e5bee38b49d.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_2": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/83cd6837ce962920986610f8c673e55bc3f41f6c.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_3": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/c88ebdfd89455894747af8632368f82475cee040.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_4": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/f74e1fa3b0128d7868ed7f5e5e3979a4b7a6bdc2_1.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_5": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ca2ea6a4ca868e65268a14e8c7f59bd14c99b079.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_6": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/1f56c5b4fd13d373f91d76c59d97fd7d59b4edd4_1.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_7": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/679c82e99715858c56785e7e9b318e3bf8b88624.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         },
         "gal_8": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/184c6d6c13c36153b67c915f4058b1d4b3dbefdc.png",
             "link": "https://www.instagram.com/pateldryfruit/"
           }
         }
