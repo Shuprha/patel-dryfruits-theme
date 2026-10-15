@@ -1,0 +1,162 @@
+{{ 'gift-forms.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign form_id = 'GiftEnquiry-' | append: section.id
+  assign type_list = section.settings.gifting_types | newline_to_br | strip_newlines | split: '<br />'
+  assign product_list = section.settings.products | newline_to_br | strip_newlines | split: '<br />'
+-%}
+
+<section
+  id="gift-enquiry"
+  class="m-gift-enquiry"
+  data-section-type="gift-enquiry-form"
+  data-section-id="{{ section.id }}"
+>
+  <div class="m-gift-enquiry__header">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="m-gift-enquiry__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="m-gift-enquiry__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="m-gift-enquiry__body">
+    {%- form 'contact', id: form_id, class: 'm-gift-enquiry__form' -%}
+      {%- if form.posted_successfully? -%}
+        <div class="m-gift-enquiry__message m-gift-enquiry__message--success" role="status">
+          {{ section.settings.success_message }}
+        </div>
+      {%- endif -%}
+
+      {%- if form.errors -%}
+        <div class="m-gift-enquiry__message m-gift-enquiry__message--error" role="alert">
+          {{ form.errors | default_errors }}
+        </div>
+      {%- endif -%}
+
+      <input type="hidden" name="contact[Form]" value="Gift enquiry">
+
+      <div class="m-gift-enquiry__grid">
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-name">Name</label>
+          <input id="{{ form_id }}-name" type="text" name="contact[name]" value="{{ form.name }}" required>
+        </div>
+
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-phone">Phone</label>
+          <input id="{{ form_id }}-phone" type="tel" name="contact[phone]" value="{{ form.phone }}" required>
+        </div>
+
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-email">Email</label>
+          <input id="{{ form_id }}-email" type="email" name="contact[email]" value="{{ form.email }}" required>
+        </div>
+
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-occasion">Occasion</label>
+          <input id="{{ form_id }}-occasion" type="text" name="contact[Occasion]" placeholder="Wedding, Diwali, corporate gifting...">
+        </div>
+
+        <div class="m-gift-enquiry__field m-gift-enquiry__field--full">
+          <label for="{{ form_id }}-type">Gifting type</label>
+          <select id="{{ form_id }}-type" name="contact[Gifting type]">
+            <option value="" disabled selected>Select gifting type</option>
+            {%- for item in type_list -%}
+              {%- assign opt = item | strip -%}
+              {%- if opt != blank -%}
+                <option value="{{ opt | escape }}">{{ opt }}</option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+        </div>
+
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-product">Product</label>
+          <select id="{{ form_id }}-product" name="contact[Product]">
+            <option value="" disabled selected>Select a product</option>
+            {%- for item in product_list -%}
+              {%- assign opt = item | strip -%}
+              {%- if opt != blank -%}
+                <option value="{{ opt | escape }}">{{ opt }}</option>
+              {%- endif -%}
+            {%- endfor -%}
+          </select>
+        </div>
+
+        <div class="m-gift-enquiry__field">
+          <label for="{{ form_id }}-units">Number of units</label>
+          <input id="{{ form_id }}-units" type="number" min="1" name="contact[Number of units]">
+        </div>
+
+        <div class="m-gift-enquiry__field m-gift-enquiry__field--full">
+          <label for="{{ form_id }}-body">Requirement details</label>
+          <textarea id="{{ form_id }}-body" name="contact[body]" rows="5"></textarea>
+        </div>
+      </div>
+
+      {%- if section.settings.note != blank -%}
+        <p class="m-gift-enquiry__note">{{ section.settings.note }}</p>
+      {%- endif -%}
+
+      <button type="submit" class="m-gift-enquiry__button">{{ section.settings.button_label }}</button>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gift enquiry form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Send us your Enquiry"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tell us what you need and our team will get back to you shortly."
+    },
+    {
+      "type": "textarea",
+      "id": "gifting_types",
+      "label": "Gifting type options",
+      "info": "One option per line.",
+      "default": "Personal gifting\nCorporate gifting\nWedding favours\nFestive gifting"
+    },
+    {
+      "type": "textarea",
+      "id": "products",
+      "label": "Product options",
+      "info": "One option per line.",
+      "default": "Gift boxes\nFestive hampers\nPremium trays\nMini favours\nCorporate sets\nNot sure yet"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "Note above button",
+      "default": "Dedicated account manager assigned for orders above 100 units."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Send enquiry"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank you! Our team will get back to you shortly."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift enquiry form"
+    }
+  ]
+}
+{% endschema %}
