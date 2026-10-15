@@ -152,104 +152,6 @@
         "animations": "inherit"
       }
     },
-    "gifting_usp_bar": {
-      "type": "icon-box",
-      "blocks": {
-        "usp_1": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
-            "image": "shopify://shop_images/Vector.png",
-            "image_by_url": "",
-            "title": "100% High Protein",
-            "description": "",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
-        },
-        "usp_2": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
-            "image": "shopify://shop_images/Vector1.png",
-            "image_by_url": "",
-            "title": "Gluten Free",
-            "description": "",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
-        },
-        "usp_3": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
-            "image": "shopify://shop_images/Vector2.png",
-            "image_by_url": "",
-            "title": "Powerful Nutrition",
-            "description": "",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
-        },
-        "usp_4": {
-          "type": "iconbox",
-          "settings": {
-            "card_color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
-            "image": "shopify://shop_images/Vector1.png",
-            "image_by_url": "",
-            "title": "No Cholesterol",
-            "description": "",
-            "link": "",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "m-button--link",
-            "button_size": ""
-          }
-        }
-      },
-      "block_order": [
-        "usp_1",
-        "usp_2",
-        "usp_3",
-        "usp_4"
-      ],
-      "settings": {
-        "container": "w-full",
-        "color_scheme": "scheme-af4f091f-68be-46e8-b5fa-9bc33c7f557e",
-        "img_on_top": false,
-        "heading": "Designed for Your Comfort",
-        "heading_size": "h3",
-        "subheading": "",
-        "description": "",
-        "header_alignment": "center",
-        "item_per_row": 4,
-        "item_gap": 30,
-        "item_gap_mobile": 10,
-        "card_style": "horizontal",
-        "image_max_width": "70px",
-        "content_alignment": "center",
-        "hover_effect": "none",
-        "enable_slider": false,
-        "show_pagination": false,
-        "show_navigation": false,
-        "use_scroll_mobile": false,
-        "use_grid_column_mb": false,
-        "banner_in_container": true,
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "custom_class": "m-gifting-usp",
-        "animations": "inherit"
-      }
-    },
     "gifting_product_tabs": {
       "type": "gift-collection-tabs",
       "blocks": {
@@ -307,6 +209,50 @@
         "products_per_tab": 4,
         "card_button_label": "Show now",
         "animations": "inherit"
+      }
+    },
+    "gift_usp_strip_dQeHzY": {
+      "type": "gift-usp-strip",
+      "blocks": {
+        "item_Dz9GqD": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector.png",
+            "text": "100% High Protein"
+          }
+        },
+        "item_6BWiaA": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector2.png",
+            "text": "Gluten Free"
+          }
+        },
+        "item_UEe8VQ": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector3.png",
+            "text": "Powerful Nutrition"
+          }
+        },
+        "item_BDUKhN": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Vector1.png",
+            "text": "No Cholesterol"
+          }
+        }
+      },
+      "block_order": [
+        "item_Dz9GqD",
+        "item_6BWiaA",
+        "item_UEe8VQ",
+        "item_BDUKhN"
+      ],
+      "name": "USP strip",
+      "settings": {
+        "bg_color": "#b3202f",
+        "text_color": "#ffffff"
       }
     },
     "gifting_two_ways": {
@@ -614,8 +560,8 @@
     "main",
     "gifting_hero",
     "gifting_by_occasion",
-    "gifting_usp_bar",
     "gifting_product_tabs",
+    "gift_usp_strip_dQeHzY",
     "gifting_two_ways",
     "gifting_whatsapp_banner",
     "gift_enquiry_form_FxVMn8",
