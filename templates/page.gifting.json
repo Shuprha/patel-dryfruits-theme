@@ -434,6 +434,11 @@
         "faq_6",
         "faq_7"
       ],
+      "custom_css": [
+        ".m-gifting-faq .m-collapsible--content {background-color: #B3202F !important; border-radius: 14px; overflow: hidden;}",
+        ".m-gifting-faq .m-collapsible--content,.m-gifting-faq .m-collapsible--content * {color: #ffffff !important; font-weight: 400 !important; font-size: 15px; line-height: 1.65;}",
+        ".m-gifting-faq .m-collapsible--content > * {padding: 20px 24px 22px;}"
+      ],
       "settings": {
         "container": "container-narrow",
         "color_scheme": "",
