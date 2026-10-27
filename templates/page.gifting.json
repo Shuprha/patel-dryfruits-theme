@@ -242,6 +242,7 @@
         "tab_mini",
         "tab_corporate"
       ],
+      "disabled": true,
       "settings": {
         "container": "container-fluid",
         "color_scheme": "",
